@@ -18,7 +18,7 @@
 		A005C9181EB895E700FEE6F1 /* URL-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A005C90F1EB895E700FEE6F1 /* URL-Extension.swift */; };
 		A005C91A1EB89B5800FEE6F1 /* ZKLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A005C9191EB89B5800FEE6F1 /* ZKLog.swift */; };
 		A005C91C1EB89C3500FEE6F1 /* ZKDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = A005C91B1EB89C3500FEE6F1 /* ZKDevice.swift */; };
-		A005C91E1EB89E5800FEE6F1 /* AlamofireUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A005C91D1EB89E5800FEE6F1 /* AlamofireUtility.swift */; };
+		A005C91E1EB89E5800FEE6F1 /* ZKAlamofireUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A005C91D1EB89E5800FEE6F1 /* ZKAlamofireUtility.swift */; };
 		A0CAB8121EB8A1C5001336A7 /* FMDatabase-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CAB8111EB8A1C5001336A7 /* FMDatabase-Extension.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,7 +36,7 @@
 		A005C90F1EB895E700FEE6F1 /* URL-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL-Extension.swift"; sourceTree = "<group>"; };
 		A005C9191EB89B5800FEE6F1 /* ZKLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZKLog.swift; sourceTree = "<group>"; };
 		A005C91B1EB89C3500FEE6F1 /* ZKDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZKDevice.swift; sourceTree = "<group>"; };
-		A005C91D1EB89E5800FEE6F1 /* AlamofireUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireUtility.swift; sourceTree = "<group>"; };
+		A005C91D1EB89E5800FEE6F1 /* ZKAlamofireUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZKAlamofireUtility.swift; sourceTree = "<group>"; };
 		A0CAB8111EB8A1C5001336A7 /* FMDatabase-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FMDatabase-Extension.swift"; sourceTree = "<group>"; };
 		DB9B6A3728A6E1C258369163 /* Pods_ZKCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZKCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC64D8037A6D20550E75F531 /* Pods-ZKCommon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZKCommon.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZKCommon/Pods-ZKCommon.release.xcconfig"; sourceTree = "<group>"; };
@@ -97,7 +97,7 @@
 				A005C8FE1EB894B800FEE6F1 /* Info.plist */,
 				A005C9191EB89B5800FEE6F1 /* ZKLog.swift */,
 				A005C91B1EB89C3500FEE6F1 /* ZKDevice.swift */,
-				A005C91D1EB89E5800FEE6F1 /* AlamofireUtility.swift */,
+				A005C91D1EB89E5800FEE6F1 /* ZKAlamofireUtility.swift */,
 			);
 			path = ZKCommon;
 			sourceTree = "<group>";
@@ -237,7 +237,7 @@
 				A005C9181EB895E700FEE6F1 /* URL-Extension.swift in Sources */,
 				A005C9131EB895E700FEE6F1 /* UIColor-Extension.swift in Sources */,
 				A005C9161EB895E700FEE6F1 /* UIView-Extension.swift in Sources */,
-				A005C91E1EB89E5800FEE6F1 /* AlamofireUtility.swift in Sources */,
+				A005C91E1EB89E5800FEE6F1 /* ZKAlamofireUtility.swift in Sources */,
 				A005C91A1EB89B5800FEE6F1 /* ZKLog.swift in Sources */,
 				A005C9101EB895E700FEE6F1 /* Date-Extension.swift in Sources */,
 				A0CAB8121EB8A1C5001336A7 /* FMDatabase-Extension.swift in Sources */,

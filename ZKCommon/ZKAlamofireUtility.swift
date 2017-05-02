@@ -1,5 +1,5 @@
 //
-//  AlamofireUtility.swift
+//  ZKAlamofireUtility.swift
 //  ZKCommon
 //
 //  Created by 王文壮 on 2017/5/2.
@@ -11,15 +11,15 @@ import SwiftyJSON
 import ZKProgressHUD
 import ZKStatusBarNotification
 
-public typealias AlamofireRequestSuccess = (_ json: JSON) -> Void
-public typealias AlamofireRequestFailure = () -> Void
+public typealias ZKAlamofireRequestSuccess = (_ json: JSON) -> Void
+public typealias ZKAlamofireRequestFailure = () -> Void
 
-public final class AlamofireUtility {
+public final class ZKAlamofireUtility {
     private static let requestErrorMsg = "连接服务器失败，请稍后再试"
     private static let notNetworkMsg = "没有网络连接，请稍后再试"
     
-    private static func request(_ url: String, parameters: [String: Any]?, success: AlamofireRequestSuccess?, failure: AlamofireRequestFailure?, method: HTTPMethod,isShowHUD: Bool) {
-        if AlamofireUtility.isReachable {
+    private static func request(_ url: String, parameters: [String: Any]?, success: ZKAlamofireRequestSuccess?, failure: ZKAlamofireRequestFailure?, method: HTTPMethod,isShowHUD: Bool) {
+        if ZKAlamofireUtility.isReachable {
             if isShowHUD {
                 ZKProgressHUD.show()
             }
@@ -51,42 +51,42 @@ public final class AlamofireUtility {
     }
     
     /// get
-    public static func get(_ url: String, parameters: [String: Any]?, success: AlamofireRequestSuccess?, failure: AlamofireRequestFailure?) {
+    public static func get(_ url: String, parameters: [String: Any]?, success: ZKAlamofireRequestSuccess?, failure: ZKAlamofireRequestFailure?) {
         request(url, parameters: parameters, success: success, failure: failure, method: .get, isShowHUD: false)
     }
     
     /// get
-    public static func get(_ url: String, parameters: [String: Any]?, success: AlamofireRequestSuccess?) {
+    public static func get(_ url: String, parameters: [String: Any]?, success: ZKAlamofireRequestSuccess?) {
         get(url, parameters: parameters, success: success, failure: nil)
     }
     
     /// get 显示 HUD
-    public static func getWithShowHUD(_ url: String, parameters: [String: Any]?, success: AlamofireRequestSuccess?, failure: AlamofireRequestFailure?) {
+    public static func getWithShowHUD(_ url: String, parameters: [String: Any]?, success: ZKAlamofireRequestSuccess?, failure: ZKAlamofireRequestFailure?) {
         request(url, parameters: parameters, success: success, failure: failure, method: .get, isShowHUD: true)
     }
     
     /// get 显示 HUD
-    public static func getWithShowHUD(_ url: String, parameters: [String: Any]?, success: AlamofireRequestSuccess?) {
+    public static func getWithShowHUD(_ url: String, parameters: [String: Any]?, success: ZKAlamofireRequestSuccess?) {
         getWithShowHUD(url, parameters: parameters, success: success, failure: nil)
     }
     
     /// post
-    public static func post(_ url: String, parameters: [String: Any]?, success: AlamofireRequestSuccess?, failure: AlamofireRequestFailure?) {
+    public static func post(_ url: String, parameters: [String: Any]?, success: ZKAlamofireRequestSuccess?, failure: ZKAlamofireRequestFailure?) {
         request(url, parameters: parameters, success: success, failure: failure, method: .post, isShowHUD: false)
     }
     
     /// post
-    public static func post(_ url: String, parameters: [String: Any]?, success: AlamofireRequestSuccess?) {
+    public static func post(_ url: String, parameters: [String: Any]?, success: ZKAlamofireRequestSuccess?) {
         post(url, parameters: parameters, success: success, failure: nil)
     }
     
     /// post 显示 HUD
-    public static func postWithShowHUD(_ url: String, parameters: [String: Any]?, success: AlamofireRequestSuccess?, failure: AlamofireRequestFailure?) {
+    public static func postWithShowHUD(_ url: String, parameters: [String: Any]?, success: ZKAlamofireRequestSuccess?, failure: ZKAlamofireRequestFailure?) {
         request(url, parameters: parameters, success: success, failure: failure, method: .post, isShowHUD: true)
     }
     
     /// post 显示 HUD
-    public static func postWithShowHUD(_ url: String, parameters: [String: Any]?, success: AlamofireRequestSuccess?) {
+    public static func postWithShowHUD(_ url: String, parameters: [String: Any]?, success: ZKAlamofireRequestSuccess?) {
         postWithShowHUD(url, parameters: parameters, success: success, failure: nil)
     }
     
