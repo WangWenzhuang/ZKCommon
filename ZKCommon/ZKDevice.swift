@@ -29,7 +29,7 @@ public final class ZKDevice {
         }
     }
     /// 设备型号
-    public static var ZKiPhoneModels: ZKiPhoneModel {
+    public static var iPhoneModels: ZKiPhoneModel {
         get {
             let screenHeight = UIScreen.main.bounds.size.height
             if screenHeight == 480 {
