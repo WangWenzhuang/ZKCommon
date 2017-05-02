@@ -9,7 +9,7 @@
 // MARK: - UIImage
 public extension UIImage {
     /// 压缩
-    public func compression(maxSize: Int) -> Data {
+    public func compression(_ maxSize: Int) -> Data {
         //先判断当前质量是否满足要求，不满足再进行压缩
         var finallImageData = UIImageJPEGRepresentation(self, 1.0)
         let sizeOrigin      = finallImageData?.count
