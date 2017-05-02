@@ -8,8 +8,8 @@
 
 import FMDB
 
-extension FMDatabase {
-    static func manager(dbFileName: String) -> FMDatabase {
+public extension FMDatabase {
+    public static func manager(dbFileName: String) -> FMDatabase {
         let db = FMDatabase(path: dbFileName)
         let isOpen = db?.open()
         assert(isOpen!, "打开数据库失败")
