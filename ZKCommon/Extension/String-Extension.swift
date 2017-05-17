@@ -138,7 +138,7 @@ public extension String {
         }
     }
     //MARK: 正则匹配
-    public func isMatch(pattern: String?) -> Bool {
+    public func isMatch(_ pattern: String?) -> Bool {
         guard let p = pattern else {
             return false
         }
