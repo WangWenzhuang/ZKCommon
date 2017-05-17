@@ -6,9 +6,9 @@
 //  Copyright © 2017年 WangWenzhuang. All rights reserved.
 //
 
-// MARK: - UIImage
+//MARK: UIImage
 public extension String {
-    /// urlEncode 字符串
+    //MARK: urlEncode 字符串
     public var urlEncode: String {
         get {
             if self.isEmpty {
@@ -17,13 +17,13 @@ public extension String {
             return self.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         }
     }
-    /// 字符串 size
+    //MARK: 字符串 size
     public func size(_ font: UIFont, width: CGFloat) -> CGSize {
         let attribute = [ NSFontAttributeName: font ]
         let conten = NSString(string: self)
         return conten.boundingRect(with: CGSize(width: width, height: UIScreen.main.bounds.size.height), options: .usesLineFragmentOrigin, attributes: attribute, context: nil).size
     }
-    /// 是否是手机号
+    //MARK: 是否是手机号
     public func isMobileNumber() -> Bool {
         let mobile = "^1(3[0-9]|5[0-35-9]|8[025-9])\\d{8}$"
         let CM = "^1(34[0-8]|(3[5-9]|5[017-9]|8[278])\\d)\\d{7}$"
@@ -38,7 +38,7 @@ public extension String {
             || (regextestct.evaluate(with: self) == true)
             || (regextestcu.evaluate(with: self) == true))
     }
-    /// 是否是身份证号
+    //MARK: 是否是身份证号
     public func isIDCardNumber() -> Bool{
         let value = self.trimmingCharacters(in: .whitespacesAndNewlines)
         
@@ -136,5 +136,12 @@ public extension String {
         default:
             return false
         }
+    }
+    //MARK: 正则匹配
+    public func isMatch(pattern: String?) -> Bool {
+        guard let p = pattern else {
+            return false
+        }
+        return NSPredicate(format: "SELF MATCHES %@", p).evaluate(with: self)
     }
 }

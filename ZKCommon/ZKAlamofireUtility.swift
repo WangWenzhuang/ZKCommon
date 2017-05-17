@@ -50,49 +50,49 @@ public final class ZKAlamofireUtility {
         
     }
     
-    /// get
+    //MARK: get
     public static func get(_ url: String, parameters: [String: Any]?, success: ZKAlamofireRequestSuccess?, failure: ZKAlamofireRequestFailure?) {
         request(url, parameters: parameters, success: success, failure: failure, method: .get, isShowHUD: false)
     }
     
-    /// get
+    //MARK: get
     public static func get(_ url: String, parameters: [String: Any]?, success: ZKAlamofireRequestSuccess?) {
         get(url, parameters: parameters, success: success, failure: nil)
     }
     
-    /// get 显示 HUD
+    //MARK: get 显示 HUD
     public static func getWithShowHUD(_ url: String, parameters: [String: Any]?, success: ZKAlamofireRequestSuccess?, failure: ZKAlamofireRequestFailure?) {
         request(url, parameters: parameters, success: success, failure: failure, method: .get, isShowHUD: true)
     }
     
-    /// get 显示 HUD
+    //MARK: get 显示 HUD
     public static func getWithShowHUD(_ url: String, parameters: [String: Any]?, success: ZKAlamofireRequestSuccess?) {
         getWithShowHUD(url, parameters: parameters, success: success, failure: nil)
     }
     
-    /// post
+    //MARK: post
     public static func post(_ url: String, parameters: [String: Any]?, success: ZKAlamofireRequestSuccess?, failure: ZKAlamofireRequestFailure?) {
         request(url, parameters: parameters, success: success, failure: failure, method: .post, isShowHUD: false)
     }
     
-    /// post
+    //MARK: post
     public static func post(_ url: String, parameters: [String: Any]?, success: ZKAlamofireRequestSuccess?) {
         post(url, parameters: parameters, success: success, failure: nil)
     }
     
-    /// post 显示 HUD
+    //MARK: post 显示 HUD
     public static func postWithShowHUD(_ url: String, parameters: [String: Any]?, success: ZKAlamofireRequestSuccess?, failure: ZKAlamofireRequestFailure?) {
         request(url, parameters: parameters, success: success, failure: failure, method: .post, isShowHUD: true)
     }
     
-    /// post 显示 HUD
+    //MARK: post 显示 HUD
     public static func postWithShowHUD(_ url: String, parameters: [String: Any]?, success: ZKAlamofireRequestSuccess?) {
         postWithShowHUD(url, parameters: parameters, success: success, failure: nil)
     }
     
     static private var isStartNetworkMonitoring = false
     static private let networkManager = NetworkReachabilityManager(host: "www.baidu.com")!
-    /// 网络监视
+    //MARK: 网络监视
     public static func startNetworkMonitoring() {
         networkManager.listener = { status in
             isStartNetworkMonitoring = true
@@ -109,7 +109,7 @@ public final class ZKAlamofireUtility {
         }
         networkManager.startListening()
     }
-    /// 是否联网
+    //MARK: 是否联网
     private static var isReachable: Bool {
         get {
             return networkManager.isReachable

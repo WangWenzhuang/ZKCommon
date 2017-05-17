@@ -6,7 +6,7 @@
 //  Copyright © 2017年 WangWenzhuang. All rights reserved.
 //
 
-// MARK: - ZKDevice
+//MARK: ZKDevice
 public enum ZKiPhoneModel: Int {
     case iPhone4
     case iPhone5
@@ -14,21 +14,21 @@ public enum ZKiPhoneModel: Int {
     case iPhone67Plus
 }
 
-// MARK: - ZKDevice
+//MARK: ZKDevice
 public final class ZKDevice {
-    /// 屏幕宽度
+    //MARK: 屏幕宽度
     public static var screenWidth: CGFloat {
         get {
             return UIScreen.main.bounds.size.width
         }
     }
-    /// 屏幕高度
+    //MARK: 屏幕高度
     public static var screenHeight: CGFloat {
         get {
             return UIScreen.main.bounds.size.height
         }
     }
-    /// 设备型号
+    //MARK: 设备型号
     public static var iPhoneModels: ZKiPhoneModel {
         get {
             let screenHeight = UIScreen.main.bounds.size.height

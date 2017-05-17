@@ -6,9 +6,9 @@
 //  Copyright © 2017年 WangWenzhuang. All rights reserved.
 //
 
-// MARK: - UIImage
+//MARK: UIImage
 public extension Date {
-    /// 当前时间字符串
+    //MARK: 当前时间字符串
     public static var nowString: String {
         get {
             let format = DateFormatter()
