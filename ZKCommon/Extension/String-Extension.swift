@@ -137,6 +137,11 @@ public extension String {
             return false
         }
     }
+    //MARK: 替换指定位置身份证号
+    public func replaceIDCardNumber(start: Int, length: Int, newValue: String) -> String {
+        let s = self as NSString
+        return s.replacingCharacters(in: NSMakeRange(start, length), with: newValue)
+    }
     //MARK: 正则匹配
     public func isMatch(_ pattern: String?) -> Bool {
         guard let p = pattern else {
