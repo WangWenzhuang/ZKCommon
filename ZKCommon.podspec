@@ -11,9 +11,9 @@ Pod::Spec.new do |s|
   s.source_files = 'ZKCommon/**/*.swift'
   s.requires_arc = true
   s.pod_target_xcconfig = { 'SWIFT_VERSION' => '3.0' }
-  s.dependency 'FMDB'
-  s.dependency 'Alamofire'
-  s.dependency 'SwiftyJSON'
-  s.dependency 'ZKProgressHUD'
-  s.dependency 'ZKStatusBarNotification'
+  s.dependency 'FMDB', '~> 2.6.2'
+  s.dependency 'Alamofire', '~> 4.4.0'
+  s.dependency 'SwiftyJSON', '~> 3.1.4'
+  s.dependency 'ZKProgressHUD', '~> 1.5'
+  s.dependency 'ZKStatusBarNotification', '~> 1.1'
 end
