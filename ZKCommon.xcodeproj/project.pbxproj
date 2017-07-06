@@ -20,6 +20,7 @@
 		A005C91C1EB89C3500FEE6F1 /* ZKDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = A005C91B1EB89C3500FEE6F1 /* ZKDevice.swift */; };
 		A005C91E1EB89E5800FEE6F1 /* ZKAlamofireUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A005C91D1EB89E5800FEE6F1 /* ZKAlamofireUtility.swift */; };
 		A03C3E8A1F04D80400E3EDC7 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03C3E891F04D80400E3EDC7 /* FileManager.swift */; };
+		A099EC4F1F0E31A700DA08B4 /* ZKAutoUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A099EC4E1F0E31A700DA08B4 /* ZKAutoUpdate.swift */; };
 		A0CAB8121EB8A1C5001336A7 /* FMDatabase-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CAB8111EB8A1C5001336A7 /* FMDatabase-Extension.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		A005C91B1EB89C3500FEE6F1 /* ZKDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZKDevice.swift; sourceTree = "<group>"; };
 		A005C91D1EB89E5800FEE6F1 /* ZKAlamofireUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZKAlamofireUtility.swift; sourceTree = "<group>"; };
 		A03C3E891F04D80400E3EDC7 /* FileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
+		A099EC4E1F0E31A700DA08B4 /* ZKAutoUpdate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZKAutoUpdate.swift; sourceTree = "<group>"; };
 		A0CAB8111EB8A1C5001336A7 /* FMDatabase-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FMDatabase-Extension.swift"; sourceTree = "<group>"; };
 		DB9B6A3728A6E1C258369163 /* Pods_ZKCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZKCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC64D8037A6D20550E75F531 /* Pods-ZKCommon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZKCommon.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZKCommon/Pods-ZKCommon.release.xcconfig"; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				A005C9191EB89B5800FEE6F1 /* ZKLog.swift */,
 				A005C91B1EB89C3500FEE6F1 /* ZKDevice.swift */,
 				A005C91D1EB89E5800FEE6F1 /* ZKAlamofireUtility.swift */,
+				A099EC4E1F0E31A700DA08B4 /* ZKAutoUpdate.swift */,
 			);
 			path = ZKCommon;
 			sourceTree = "<group>";
@@ -204,13 +207,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ZKCommon-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5A0706E38763E8B89983318C /* [CP] Copy Pods Resources */ = {
@@ -237,6 +243,7 @@
 			files = (
 				A005C9121EB895E700FEE6F1 /* String-Extension.swift in Sources */,
 				A005C9141EB895E700FEE6F1 /* UIImage-Extension.swift in Sources */,
+				A099EC4F1F0E31A700DA08B4 /* ZKAutoUpdate.swift in Sources */,
 				A005C9181EB895E700FEE6F1 /* URL-Extension.swift in Sources */,
 				A03C3E8A1F04D80400E3EDC7 /* FileManager.swift in Sources */,
 				A005C9131EB895E700FEE6F1 /* UIColor-Extension.swift in Sources */,
@@ -366,6 +373,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = ZKCommon/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wangwenzhuang.ZKCommon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -387,6 +395,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = ZKCommon/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wangwenzhuang.ZKCommon;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -3,7 +3,7 @@
 # ZKProgressHUD
 
 ![license](https://img.shields.io/badge/license-MIT-brightgreen.svg)
-![CocoaPods](https://img.shields.io/badge/pod-v1.1-brightgreen.svg)
+![CocoaPods](https://img.shields.io/badge/pod-v1.5-brightgreen.svg)
 ![platform](https://img.shields.io/badge/platform-iOS-brightgreen.svg)
 ![contact](https://img.shields.io/badge/contact-1020304029%40qq.com-brightgreen.svg)
 
@@ -18,10 +18,10 @@ iOS App 上极易于使用的 HUD。
 - [x] 显示进度
 - [x] 显示图片 ➕ 文字
 - [x] 显示情景信息（info、success、error）
-- [x] 显示 Tost 样式信息
+- [x] 显示 Toast 样式信息
 - [x] 遮罩自定义显示
 - [x] 显示动画
-- [x] 自定义（背景色、前景色、字体、自动消失间隔秒、遮罩、动画类型...），满足极大多数场景
+- [x] 自定义（背景色、前景色、字体、自动消失间隔秒、遮罩、动画类型、毛玻璃效果...），满足极大多数场景
 
 ## 运行环境
 
@@ -137,7 +137,7 @@ ZKProgressHUD.showSuccess("操作成功👏👏👏")
 ZKProgressHUD.showError("出现错误了😢😢😢")
 ```
 
-### 显示 Tost 样式信息
+### 显示 Toast 样式信息
 
 ```swift
 ZKProgressHUD.showMessage("开始使用 ZKProgressHUD 吧")
@@ -164,7 +164,7 @@ ZKProgressHUD.dismiss(delay: 3)
 ![style5](https://raw.githubusercontent.com/WangWenzhuang/ZKProgressHUD/master/image/style5.jpeg)
 ![style6](https://raw.githubusercontent.com/WangWenzhuang/ZKProgressHUD/master/image/style6.jpeg)
 
-### 设置是否显示遮罩
+### 设置遮罩样式，默认值：.visible
 
 ```swift
 /// 隐藏
@@ -175,7 +175,7 @@ ZKProgressHUD.dismiss(delay: 3)
 setMaskStyle (_ maskStyle: ZKProgressHUDMaskStyle)
 ```
 
-### 设置动画显示/隐藏样式
+### 设置动画显示/隐藏样式，默认值：.fade
 
 ```swift
 /// 淡入/淡出（默认）
@@ -189,37 +189,49 @@ setMaskStyle (_ maskStyle: ZKProgressHUDMaskStyle)
 setAnimationShowStyle (_ animationShowStyle: ZKProgressHUDAnimationShowStyle)
 ```
 
-### 设置遮罩背景色
+### 设置遮罩背景色，默认值：.black
 
 ```swift
 setMaskBackgroundColor(_ color: UIColor)
 ```
 
-### 设置前景色
+### 设置前景色，默认值：.white（前景色在设置 effectStyle 值时会自动适配，如果要使用自定义前景色，在调用 setEffectStyle 方法后调用 setForegroundColor 方法即可）
 
 ```swift
 setForegroundColor(_ color: UIColor)
 ```
 
-### 设置背景色
+### 设置 HUD 毛玻璃效果（与 backgroundColor 互斥，如果设置毛玻璃效果不是.none，则根据样式自动设置前景色），默认值：.dark
+
+```swift
+setEffectStyle(_ hudEffectStyle: ZKProgressHUDEffectStyle)
+```
+
+### 设置 HUD 毛玻璃透明度，默认值：1
+
+```swift
+setEffectAlpha(_ effectAlpha: CGFloat)
+```
+
+### 设置 HUD 背景色（与 effectStyle 互斥，如果设置背景色，effectStyle = .none），默认值：UIColor(red: 0 / 255.0, green: 0 / 255.0, blue: 0 / 255.0, alpha: 0.8)
 
 ```swift
 setBackgroundColor(_ color: UIColor)
 ```
 
-### 设置字体
+### 设置字体，默认值：UIFont.boldSystemFont(ofSize: 15)
 
 ```swift
 setFont(_ font: UIFont)
 ```
 
-### 设置圆角
+### 设置圆角，默认值：6
 
 ```swift
 setCornerRadius(_ cornerRadius: CGFloat)
 ```
 
-### 设置加载动画类型
+### 设置加载动画样式动画样式，默认值：circle
 
 ```swift
 /// 圆圈
@@ -230,7 +242,7 @@ setCornerRadius(_ cornerRadius: CGFloat)
 setAnimationStyle(_ animationStyle: ZKProgressHUDAnimationStyle)
 ```
 
-### 设置自动隐藏时间（适用于非加载和进度类型显示）
+### 设置自动隐藏延时秒数，默认值：2
 
 ```swift
 setAutoDismissDelay(_ delay: Int)
