@@ -18,12 +18,12 @@ public final class ZKAlamofireUtility {
     private static let requestErrorMsg = "连接服务器失败，请稍后再试"
     private static let notNetworkMsg = "没有网络连接，请稍后再试"
     
-    private static func request(_ url: String, parameters: [String: Any]?, success: ZKAlamofireRequestSuccess?, failure: ZKAlamofireRequestFailure?, method: HTTPMethod,isShowHUD: Bool) {
+    private static func request(_ url: String, parameters: [String: Any]?, success: ZKAlamofireRequestSuccess?, failure: ZKAlamofireRequestFailure?, method: HTTPMethod, headers: HTTPHeaders? = nil, isShowHUD: Bool = false) {
         if ZKAlamofireUtility.isReachable {
             if isShowHUD {
                 ZKProgressHUD.show()
             }
-            Alamofire.request(url, method: method, parameters: parameters).responseJSON { (response) in
+            Alamofire.request(url, method: method, parameters: parameters, headers: headers).responseJSON { (response) in
                 if isShowHUD {
                     ZKProgressHUD.dismiss()
                 }
@@ -51,43 +51,43 @@ public final class ZKAlamofireUtility {
     }
     
     //MARK: get
-    public static func get(_ url: String, parameters: [String: Any]?, success: ZKAlamofireRequestSuccess?, failure: ZKAlamofireRequestFailure?) {
-        request(url, parameters: parameters, success: success, failure: failure, method: .get, isShowHUD: false)
+    public static func get(_ url: String, parameters: [String: Any]?, headers: HTTPHeaders? = nil, success: ZKAlamofireRequestSuccess?, failure: ZKAlamofireRequestFailure?) {
+        request(url, parameters: parameters, success: success, failure: failure, method: .get, headers: headers, isShowHUD: false)
     }
     
     //MARK: get
-    public static func get(_ url: String, parameters: [String: Any]?, success: ZKAlamofireRequestSuccess?) {
-        get(url, parameters: parameters, success: success, failure: nil)
+    public static func get(_ url: String, parameters: [String: Any]?, headers: HTTPHeaders? = nil, success: ZKAlamofireRequestSuccess?) {
+        get(url, parameters: parameters, headers: headers, success: success, failure: nil)
     }
     
     //MARK: get 显示 HUD
-    public static func getWithShowHUD(_ url: String, parameters: [String: Any]?, success: ZKAlamofireRequestSuccess?, failure: ZKAlamofireRequestFailure?) {
-        request(url, parameters: parameters, success: success, failure: failure, method: .get, isShowHUD: true)
+    public static func getWithShowHUD(_ url: String, parameters: [String: Any]?, headers: HTTPHeaders? = nil, success: ZKAlamofireRequestSuccess?, failure: ZKAlamofireRequestFailure?) {
+        request(url, parameters: parameters, success: success, failure: failure, method: .get, headers: headers, isShowHUD: true)
     }
     
     //MARK: get 显示 HUD
-    public static func getWithShowHUD(_ url: String, parameters: [String: Any]?, success: ZKAlamofireRequestSuccess?) {
-        getWithShowHUD(url, parameters: parameters, success: success, failure: nil)
+    public static func getWithShowHUD(_ url: String, parameters: [String: Any]?, headers: HTTPHeaders? = nil, success: ZKAlamofireRequestSuccess?) {
+        getWithShowHUD(url, parameters: parameters, headers: headers, success: success, failure: nil)
     }
     
     //MARK: post
-    public static func post(_ url: String, parameters: [String: Any]?, success: ZKAlamofireRequestSuccess?, failure: ZKAlamofireRequestFailure?) {
-        request(url, parameters: parameters, success: success, failure: failure, method: .post, isShowHUD: false)
+    public static func post(_ url: String, parameters: [String: Any]?, headers: HTTPHeaders? = nil, success: ZKAlamofireRequestSuccess?, failure: ZKAlamofireRequestFailure?) {
+        request(url, parameters: parameters, success: success, failure: failure, method: .post, headers: headers, isShowHUD: false)
     }
     
     //MARK: post
-    public static func post(_ url: String, parameters: [String: Any]?, success: ZKAlamofireRequestSuccess?) {
-        post(url, parameters: parameters, success: success, failure: nil)
+    public static func post(_ url: String, parameters: [String: Any]?, headers: HTTPHeaders? = nil, success: ZKAlamofireRequestSuccess?) {
+        post(url, parameters: parameters, headers: headers, success: success, failure: nil)
     }
     
     //MARK: post 显示 HUD
-    public static func postWithShowHUD(_ url: String, parameters: [String: Any]?, success: ZKAlamofireRequestSuccess?, failure: ZKAlamofireRequestFailure?) {
-        request(url, parameters: parameters, success: success, failure: failure, method: .post, isShowHUD: true)
+    public static func postWithShowHUD(_ url: String, parameters: [String: Any]?, headers: HTTPHeaders? = nil, success: ZKAlamofireRequestSuccess?, failure: ZKAlamofireRequestFailure?) {
+        request(url, parameters: parameters, success: success, failure: failure, method: .post, headers: headers, isShowHUD: true)
     }
     
     //MARK: post 显示 HUD
-    public static func postWithShowHUD(_ url: String, parameters: [String: Any]?, success: ZKAlamofireRequestSuccess?) {
-        postWithShowHUD(url, parameters: parameters, success: success, failure: nil)
+    public static func postWithShowHUD(_ url: String, parameters: [String: Any]?, headers: HTTPHeaders? = nil, success: ZKAlamofireRequestSuccess?) {
+        postWithShowHUD(url, parameters: parameters, headers: headers, success: success, failure: nil)
     }
     
     static private var isStartNetworkMonitoring = false

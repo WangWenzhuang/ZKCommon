@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'ZKCommon'
-  s.version = '1.4'
+  s.version = '1.5'
   s.ios.deployment_target = '8.0'
   s.license = { :type => 'MIT', :file => 'LICENSE' }
   s.summary = '我自己常用的扩展、工具等...'
