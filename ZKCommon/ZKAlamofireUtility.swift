@@ -15,15 +15,16 @@ public typealias ZKAlamofireRequestSuccess = (_ json: JSON) -> Void
 public typealias ZKAlamofireRequestFailure = () -> Void
 
 public final class ZKAlamofireUtility {
-    private static let requestErrorMsg = "连接服务器失败，请稍后再试"
+    public static let requestErrorMsg = "连接服务器失败，请稍后再试"
     private static let notNetworkMsg = "没有网络连接，请稍后再试"
+    private static var globalHeaders: HTTPHeaders?
     
     private static func request(_ url: String, parameters: [String: Any]?, success: ZKAlamofireRequestSuccess?, failure: ZKAlamofireRequestFailure?, method: HTTPMethod, headers: HTTPHeaders? = nil, isShowHUD: Bool = false) {
         if ZKAlamofireUtility.isReachable {
             if isShowHUD {
                 ZKProgressHUD.show()
             }
-            Alamofire.request(url, method: method, parameters: parameters, headers: headers).responseJSON { (response) in
+            Alamofire.request(url, method: method, parameters: parameters, headers: headers ?? self.globalHeaders).responseJSON { (response) in
                 if isShowHUD {
                     ZKProgressHUD.dismiss()
                 }
@@ -88,6 +89,11 @@ public final class ZKAlamofireUtility {
     //MARK: post 显示 HUD
     public static func postWithShowHUD(_ url: String, parameters: [String: Any]?, headers: HTTPHeaders? = nil, success: ZKAlamofireRequestSuccess?) {
         postWithShowHUD(url, parameters: parameters, headers: headers, success: success, failure: nil)
+    }
+    
+    //MARK: 设置全局 headers
+    public static func setGlobalHeaders(_ headers: HTTPHeaders) {
+        self.globalHeaders = headers
     }
     
     static private var isStartNetworkMonitoring = false
