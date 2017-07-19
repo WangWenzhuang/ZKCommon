@@ -92,7 +92,7 @@ public final class ZKAlamofireUtility {
     }
     
     //MARK: 设置全局 headers
-    public static func setGlobalHeaders(_ headers: HTTPHeaders) {
+    public static func setGlobalHeaders(_ headers: HTTPHeaders?) {
         self.globalHeaders = headers
     }
     
