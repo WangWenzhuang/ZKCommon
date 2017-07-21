@@ -1,5 +1,5 @@
 //
-//  ZKAlamofireUtility.swift
+//  ZKAlamofire.swift
 //  ZKCommon
 //
 //  Created by 王文壮 on 2017/5/2.
@@ -14,13 +14,13 @@ import ZKStatusBarNotification
 public typealias ZKAlamofireRequestSuccess = (_ json: JSON) -> Void
 public typealias ZKAlamofireRequestFailure = () -> Void
 
-public final class ZKAlamofireUtility {
+public final class ZKAlamofire {
     public static let requestErrorMsg = "连接服务器失败，请稍后再试"
     private static let notNetworkMsg = "没有网络连接，请稍后再试"
     private static var globalHeaders: HTTPHeaders?
     
     private static func request(_ url: String, parameters: [String: Any]?, success: ZKAlamofireRequestSuccess?, failure: ZKAlamofireRequestFailure?, method: HTTPMethod, headers: HTTPHeaders? = nil, isShowHUD: Bool = false) {
-        if ZKAlamofireUtility.isReachable {
+        if ZKAlamofire.isReachable {
             if isShowHUD {
                 ZKProgressHUD.show()
             }
@@ -37,6 +37,9 @@ public final class ZKAlamofireUtility {
                     }
                 case .failure(let error):
                     ZKLog.error((response.request!.url?.absoluteString)! + "\t******\terror:\r\(error)")
+                    if isShowHUD {
+                        ZKProgressHUD.showError(requestErrorMsg)
+                    }
                     if failure != nil {
                         failure!()
                     }
