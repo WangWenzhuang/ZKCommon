@@ -11,7 +11,7 @@ import ZKAlertViewSwift
 public final class ZKAutoUpdate {
     public static func start(url: String, oldVersion: String) {
         DispatchQueue.global().asyncAfter(deadline: DispatchTime.now() + Double(Int64(30 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)) {
-            ZKAlamofireUtility.get(url, parameters: nil, success: { (json) in
+            ZKAlamofire.get(url, parameters: nil, success: { (json) in
                 let auditState = json["isAudit"].intValue
                 let updateMsg = json["updateMsg"].stringValue
                 let forcedUpdate = json["forcedUpdate"].intValue
