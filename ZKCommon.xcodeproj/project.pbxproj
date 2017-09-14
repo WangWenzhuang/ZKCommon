@@ -20,6 +20,7 @@
 		A005C91C1EB89C3500FEE6F1 /* ZKDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = A005C91B1EB89C3500FEE6F1 /* ZKDevice.swift */; };
 		A005C91E1EB89E5800FEE6F1 /* ZKAlamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = A005C91D1EB89E5800FEE6F1 /* ZKAlamofire.swift */; };
 		A03C3E8A1F04D80400E3EDC7 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03C3E891F04D80400E3EDC7 /* FileManager.swift */; };
+		A05770911F6A916E00CB7DE1 /* UIViewController-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05770901F6A916E00CB7DE1 /* UIViewController-Extension.swift */; };
 		A099EC4F1F0E31A700DA08B4 /* ZKAutoUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A099EC4E1F0E31A700DA08B4 /* ZKAutoUpdate.swift */; };
 		A0CAB8121EB8A1C5001336A7 /* FMDatabase-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CAB8111EB8A1C5001336A7 /* FMDatabase-Extension.swift */; };
 /* End PBXBuildFile section */
@@ -40,6 +41,7 @@
 		A005C91B1EB89C3500FEE6F1 /* ZKDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZKDevice.swift; sourceTree = "<group>"; };
 		A005C91D1EB89E5800FEE6F1 /* ZKAlamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZKAlamofire.swift; sourceTree = "<group>"; };
 		A03C3E891F04D80400E3EDC7 /* FileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
+		A05770901F6A916E00CB7DE1 /* UIViewController-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController-Extension.swift"; sourceTree = "<group>"; };
 		A099EC4E1F0E31A700DA08B4 /* ZKAutoUpdate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZKAutoUpdate.swift; sourceTree = "<group>"; };
 		A0CAB8111EB8A1C5001336A7 /* FMDatabase-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FMDatabase-Extension.swift"; sourceTree = "<group>"; };
 		DB9B6A3728A6E1C258369163 /* Pods_ZKCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZKCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,6 +121,7 @@
 				A005C90F1EB895E700FEE6F1 /* URL-Extension.swift */,
 				A0CAB8111EB8A1C5001336A7 /* FMDatabase-Extension.swift */,
 				A03C3E891F04D80400E3EDC7 /* FileManager.swift */,
+				A05770901F6A916E00CB7DE1 /* UIViewController-Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 				A005C9131EB895E700FEE6F1 /* UIColor-Extension.swift in Sources */,
 				A005C9161EB895E700FEE6F1 /* UIView-Extension.swift in Sources */,
 				A005C91E1EB89E5800FEE6F1 /* ZKAlamofire.swift in Sources */,
+				A05770911F6A916E00CB7DE1 /* UIViewController-Extension.swift in Sources */,
 				A005C91A1EB89B5800FEE6F1 /* ZKLog.swift in Sources */,
 				A005C9101EB895E700FEE6F1 /* Date-Extension.swift in Sources */,
 				A0CAB8121EB8A1C5001336A7 /* FMDatabase-Extension.swift in Sources */,
