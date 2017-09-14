@@ -28,6 +28,12 @@ public final class ZKDevice {
             return UIScreen.main.bounds.size.height
         }
     }
+    //MARK: 状态栏高度
+    public static var statusBarHeight: CGFloat {
+        get {
+            return UIApplication.shared.statusBarFrame.size.height
+        }
+    }
     //MARK: 设备型号
     public static var iPhoneModels: ZKiPhoneModel {
         get {
