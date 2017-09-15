@@ -6,7 +6,7 @@
 //  Copyright © 2017年 WangWenzhuang. All rights reserved.
 //
 
-extension UIViewController {
+public extension UIViewController {
     //MARK: 导航栏高度
     public var navigationBarHeight: CGFloat {
         get {

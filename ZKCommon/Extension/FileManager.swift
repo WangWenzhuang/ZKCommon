@@ -6,7 +6,7 @@
 //  Copyright © 2017年 WangWenzhuang. All rights reserved.
 //
 
-extension FileManager {
+public extension FileManager {
     //MARK: 判断文件是否存在
     public static func fileExists(_ path: String) -> Bool {
         return FileManager.default.fileExists(atPath: path)
