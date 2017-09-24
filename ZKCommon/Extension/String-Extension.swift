@@ -19,7 +19,7 @@ public extension String {
     }
     //MARK: 字符串 size
     public func size(_ font: UIFont, width: CGFloat) -> CGSize {
-        let attribute = [ NSFontAttributeName: font ]
+        let attribute = [ NSAttributedStringKey.font: font ]
         let conten = NSString(string: self)
         return conten.boundingRect(with: CGSize(width: width, height: UIScreen.main.bounds.size.height), options: .usesLineFragmentOrigin, attributes: attribute, context: nil).size
     }
