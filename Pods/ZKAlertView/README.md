@@ -1,10 +1,9 @@
 # ZKAlertViewSwift
 
-[![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)](https://github.com/WangWenzhuang/ZKAlertViewSwift)
-[![license](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://github.com/WangWenzhuang/ZKAlertViewSwift)
-[![CocoaPods](https://img.shields.io/badge/pod-1.0-brightgreen.svg)](https://github.com/WangWenzhuang/ZKAlertViewSwift)
-[![platform](https://img.shields.io/badge/platform-iOS-brightgreen.svg)](https://github.com/WangWenzhuang/ZKAlertViewSwift)
-[![platform](https://img.shields.io/badge/contact-1020304029%40qq.com-brightgreen.svg)](https://github.com/WangWenzhuang/ZKAlertViewSwift)
+![license](https://img.shields.io/badge/license-MIT-brightgreen.svg)
+![build](https://travis-ci.org/WangWenzhuang/ZKAlertViewSwift.svg?branch=master)
+![CocoaPods](https://img.shields.io/badge/pod-v1.1-brightgreen.svg)
+![platform](https://img.shields.io/badge/platform-iOS-brightgreen.svg)
 
 ZKAlertViewSwift 封装了 UIAlertView，简单易用，Block 回调，丢掉各种 tag。
 

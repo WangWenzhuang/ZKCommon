@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double ZKAlertViewSwiftVersionNumber;
-FOUNDATION_EXPORT const unsigned char ZKAlertViewSwiftVersionString[];
+FOUNDATION_EXPORT double ZKAlamofireVersionNumber;
+FOUNDATION_EXPORT const unsigned char ZKAlamofireVersionString[];
 

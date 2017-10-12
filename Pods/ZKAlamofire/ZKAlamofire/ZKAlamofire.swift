@@ -1,11 +1,12 @@
 //
 //  ZKAlamofire.swift
-//  ZKCommon
+//  ZKAlamofire
 //
-//  Created by 王文壮 on 2017/5/2.
-//  Copyright © 2017年 WangWenzhuang. All rights reserved.
+//  Created by 王文壮 on 2017/10/12.
+//  Copyright © 2017年 王文壮. All rights reserved.
 //
 
+import ZKLog
 import Alamofire
 import SwiftyJSON
 import ZKProgressHUD

@@ -6,7 +6,8 @@
 //  Copyright © 2017年 WangWenzhuang. All rights reserved.
 //
 
-import ZKAlertViewSwift
+import ZKAlertView
+import ZKAlamofire
 
 public final class ZKAutoUpdate {
     public static func start(url: String, oldVersion: String) {
@@ -21,12 +22,12 @@ public final class ZKAutoUpdate {
                     if oldVersion != version {
                         // 强制更新
                         if forcedUpdate == 1 {
-                            ZKAlertViewSwift.showAlertView("提示", message: updateMsg, buttonTitle: "更新", clickAtIndexBlock: { (alertView, buttonIndex) in
+                            ZKAlertView.showAlertView("提示", message: updateMsg, buttonTitle: "更新", clickAtIndexBlock: { (alertView, buttonIndex) in
                                 UIApplication.shared.openURL(URL(string: url)!)
                                 exit(0)
                             })
                         } else {
-                            ZKAlertViewSwift.showAlertView("提示", message: updateMsg, clickAtIndexBlock: { (alertView, buttonIndex) in
+                            ZKAlertView.showAlertView("提示", message: updateMsg, clickAtIndexBlock: { (alertView, buttonIndex) in
                                 if buttonIndex == 1 {
                                     UIApplication.shared.openURL(URL(string: url)!)
                                 }

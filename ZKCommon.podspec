@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'ZKCommon'
-  s.version = '2.1.5'
+  s.version = '2.1.6'
   s.ios.deployment_target = '8.0'
   s.license = { :type => 'MIT', :file => 'LICENSE' }
   s.summary = '我自己常用的扩展、工具等...'
@@ -12,9 +12,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.0' }
   s.dependency 'FMDB', '~> 2.6.2'
-  s.dependency 'Alamofire'
   s.dependency 'SwiftyJSON'
-  s.dependency 'ZKProgressHUD'
-  s.dependency 'ZKAlertViewSwift'
-  s.dependency 'ZKStatusBarNotification'
+  s.dependency 'ZKAlertView'
+  s.dependency 'ZKAlamofire'
 end

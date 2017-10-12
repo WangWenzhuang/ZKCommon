@@ -1,6 +1,0 @@
-framework module ZKAlertViewSwift {
-  umbrella header "ZKAlertViewSwift-umbrella.h"
-
-  export *
-  module * { export * }
-}

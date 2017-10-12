@@ -1,0 +1,6 @@
+framework module ZKAlertView {
+  umbrella header "ZKAlertView-umbrella.h"
+
+  export *
+  module * { export * }
+}
