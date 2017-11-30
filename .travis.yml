@@ -1,0 +1,6 @@
+osx_image: xcode8.3
+language: swift
+
+xcode_project: ZKCommon.xcworkspace
+xcode_scheme: ZKCommon
+xcode_sdk: iphonesimulator
