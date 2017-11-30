@@ -8,14 +8,19 @@
 import UIKit
 
 class ZKAlertViewObject: NSObject, UIAlertViewDelegate {
-    var ClickAtIndexBlock : ZKClickAtIndexBlock?
+    var completion : ZKCompletion?
+    var clickAtIndex : ZKClickAtIndex?
     func alertView(_ alertView: UIAlertView, clickedButtonAt buttonIndex: Int) {
-        if ZKAlertView.object.ClickAtIndexBlock !=  nil {
-            ZKAlertView.object.ClickAtIndexBlock!(alertView, buttonIndex)
+        if ZKAlertView.object.completion !=  nil {
+            ZKAlertView.object.completion!()
+        }
+        if ZKAlertView.object.clickAtIndex != nil {
+            ZKAlertView.object.clickAtIndex!(alertView, buttonIndex)
         }
     }
     
     func alertView(_ alertView: UIAlertView, didDismissWithButtonIndex buttonIndex: Int) {
-        ZKAlertView.object.ClickAtIndexBlock = nil
+        ZKAlertView.object.completion = nil
+        ZKAlertView.object.clickAtIndex = nil
     }
 }

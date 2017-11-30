@@ -8,29 +8,41 @@
 
 import UIKit
 
-public typealias ZKClickAtIndexBlock = (_ alertView : UIAlertView, _ buttonIndex : Int) -> Void
+public typealias ZKCompletion = () -> Void
+public typealias ZKClickAtIndex = (_ alertView : UIAlertView, _ buttonIndex : Int) -> Void
 
-public class ZKAlertView: NSObject {
+public class ZKAlertView {
+    
     internal static let object = ZKAlertViewObject()
     
-    public static func showAlertView(_ title : String, message : String, buttonTitle : String) {
-        ZKAlertView.showAlertView(title, message: message, buttonTitle: buttonTitle, clickAtIndexBlock: nil)
+    public static func show(message: String, buttonTitle: String, completion: ZKCompletion? = nil) {
+        self.show(nil, message: message, buttonTitle: buttonTitle, completion: completion)
+    }
+    public static func show(_ title: String?, message: String, buttonTitle: String, completion: ZKCompletion? = nil) {
+        self.show(title, message: message, completion: completion, cancleButtonTitle: buttonTitle)
     }
     
-    public static func showAlertView(_ title : String, message : String, buttonTitle : String, clickAtIndexBlock : ZKClickAtIndexBlock!) {
-        ZKAlertView.showAlertView(title, message: message, clickAtIndexBlock: clickAtIndexBlock, cancleButtonTitle: buttonTitle, otherButtonTitles: nil)
+    public static func show(message: String, cancleButtonTitle: String, otherButtonTitles: String..., clickAtIndex: @escaping ZKClickAtIndex) {
+        self.show(nil, message: message, clickAtIndex: clickAtIndex, cancleButtonTitle: cancleButtonTitle, otherButtonTitles: otherButtonTitles)
+    }
+    public static func show(_ title: String?, message: String, cancleButtonTitle: String, otherButtonTitles: String..., clickAtIndex: @escaping ZKClickAtIndex) {
+        self.show(title, message: message, clickAtIndex: clickAtIndex, cancleButtonTitle: cancleButtonTitle, otherButtonTitles: otherButtonTitles)
     }
     
-    public static func showAlertView(_ title : String, message : String, clickAtIndexBlock : ZKClickAtIndexBlock!, cancleButtonTitle : String, otherButtonTitles : String!...) {
-        if clickAtIndexBlock != nil {
-            ZKAlertView.object.ClickAtIndexBlock = clickAtIndexBlock
+    private static func show(_ title: String?, message: String?, completion: ZKCompletion? = nil, clickAtIndex: ZKClickAtIndex? = nil, cancleButtonTitle: String?, otherButtonTitles: [String?]? = nil) {
+        if clickAtIndex != nil {
+            ZKAlertView.object.clickAtIndex = clickAtIndex
         }
-        let alertView = UIAlertView.init(title: title, message: message, delegate: ZKAlertView.object, cancelButtonTitle: cancleButtonTitle)
-        for buttonTitle in otherButtonTitles {
-            if buttonTitle == nil {
-                break
+        if completion != nil {
+            ZKAlertView.object.completion = completion
+        }
+        let alertView = UIAlertView(title: title, message: message, delegate: ZKAlertView.object, cancelButtonTitle: cancleButtonTitle)
+        if let buttonTitles = otherButtonTitles {
+            for buttonTitle in buttonTitles {
+                if buttonTitle != nil {
+                    alertView.addButton(withTitle: buttonTitle)
+                }
             }
-            alertView.addButton(withTitle: buttonTitle)
         }
         alertView.show()
     }

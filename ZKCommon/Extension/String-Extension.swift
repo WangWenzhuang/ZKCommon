@@ -29,7 +29,7 @@ public extension String {
     }
     //MARK: 是否是身份证号
     public func isIDCardNumber() -> Bool{
-        if self.characters.count != 18 {
+        if self.count != 18 {
             // 非18位
             return false
         }

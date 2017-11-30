@@ -12,7 +12,7 @@ import ZKAlamofire
 public final class ZKAutoUpdate {
     public static func start(url: String, oldVersion: String) {
         DispatchQueue.global().asyncAfter(deadline: DispatchTime.now() + Double(Int64(30 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)) {
-            ZKAlamofire.get(url, parameters: nil, success: { (json) in
+            ZKAlamofire.get(url, success: { (json) in
                 let auditState = json["isAudit"].intValue
                 let updateMsg = json["updateMsg"].stringValue
                 let forcedUpdate = json["forcedUpdate"].intValue
@@ -22,16 +22,16 @@ public final class ZKAutoUpdate {
                     if oldVersion != version {
                         // 强制更新
                         if forcedUpdate == 1 {
-                            ZKAlertView.showAlertView("提示", message: updateMsg, buttonTitle: "更新", clickAtIndexBlock: { (alertView, buttonIndex) in
+                            ZKAlertView.show("提示", message: updateMsg, buttonTitle: "更新", completion: {
                                 UIApplication.shared.openURL(URL(string: url)!)
                                 exit(0)
                             })
                         } else {
-                            ZKAlertView.showAlertView("提示", message: updateMsg, clickAtIndexBlock: { (alertView, buttonIndex) in
+                            ZKAlertView.show("提示", message: updateMsg, cancleButtonTitle: "下次更新", otherButtonTitles: "马上更新", clickAtIndex: { (alertView, buttonIndex) in
                                 if buttonIndex == 1 {
                                     UIApplication.shared.openURL(URL(string: url)!)
                                 }
-                            }, cancleButtonTitle: "下次更新", otherButtonTitles: "马上更新")
+                            })
                         }
                     }
                 }
