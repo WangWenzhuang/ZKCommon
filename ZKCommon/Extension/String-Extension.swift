@@ -67,6 +67,15 @@ public extension String {
         let s = self as NSString
         return s.replacingCharacters(in: NSMakeRange(start, length), with: newValue)
     }
+    //MARK: 是否包含中文
+    public func isIncludeChinese() -> Bool {
+        for (_, value) in self.enumerated() {
+            if ("\u{4E00}" <= value  && value <= "\u{9FA5}") {
+                return true
+            }
+        }
+        return false
+    }
     //MARK: 正则匹配
     public func isMatch(_ pattern: String?) -> Bool {
         guard let p = pattern else {
