@@ -9,7 +9,7 @@
 import ZKLog
 
 public final class ZKJson {
-    public func json(_ object: Any) -> String {
+    public static func json(_ object: Any) -> String {
         if (!JSONSerialization.isValidJSONObject(object)) {
             ZKLog.error("无法解析 JSON")
             return ""
