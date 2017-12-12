@@ -20,6 +20,7 @@
 		A03C3E8A1F04D80400E3EDC7 /* FileManager Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03C3E891F04D80400E3EDC7 /* FileManager Extension.swift */; };
 		A05770911F6A916E00CB7DE1 /* UIViewController-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05770901F6A916E00CB7DE1 /* UIViewController-Extension.swift */; };
 		A099EC4F1F0E31A700DA08B4 /* ZKAutoUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A099EC4E1F0E31A700DA08B4 /* ZKAutoUpdate.swift */; };
+		A0C0A51F1FDFA8DB0029EC1E /* Dictionary-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C0A51E1FDFA8DB0029EC1E /* Dictionary-Extension.swift */; };
 		A0CAB8121EB8A1C5001336A7 /* FMDatabase-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CAB8111EB8A1C5001336A7 /* FMDatabase-Extension.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		A03C3E891F04D80400E3EDC7 /* FileManager Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FileManager Extension.swift"; sourceTree = "<group>"; };
 		A05770901F6A916E00CB7DE1 /* UIViewController-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController-Extension.swift"; sourceTree = "<group>"; };
 		A099EC4E1F0E31A700DA08B4 /* ZKAutoUpdate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZKAutoUpdate.swift; sourceTree = "<group>"; };
+		A0C0A51E1FDFA8DB0029EC1E /* Dictionary-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary-Extension.swift"; sourceTree = "<group>"; };
 		A0CAB8111EB8A1C5001336A7 /* FMDatabase-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FMDatabase-Extension.swift"; sourceTree = "<group>"; };
 		DB9B6A3728A6E1C258369163 /* Pods_ZKCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZKCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC64D8037A6D20550E75F531 /* Pods-ZKCommon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZKCommon.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZKCommon/Pods-ZKCommon.release.xcconfig"; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				A0CAB8111EB8A1C5001336A7 /* FMDatabase-Extension.swift */,
 				A03C3E891F04D80400E3EDC7 /* FileManager Extension.swift */,
 				A05770901F6A916E00CB7DE1 /* UIViewController-Extension.swift */,
+				A0C0A51E1FDFA8DB0029EC1E /* Dictionary-Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 				A0CAB8121EB8A1C5001336A7 /* FMDatabase-Extension.swift in Sources */,
 				A005C91C1EB89C3500FEE6F1 /* ZKDevice.swift in Sources */,
 				A005C9171EB895E700FEE6F1 /* UIWindow-Extension.swift in Sources */,
+				A0C0A51F1FDFA8DB0029EC1E /* Dictionary-Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
