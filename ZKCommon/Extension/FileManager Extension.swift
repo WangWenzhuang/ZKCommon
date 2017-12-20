@@ -6,6 +6,7 @@
 //  Copyright © 2017年 WangWenzhuang. All rights reserved.
 //
 
+import ZKLog
 
 public extension FileManager {
     //MARK: 判断文件或文件夹是否存在
@@ -13,8 +14,12 @@ public extension FileManager {
         return FileManager.default.fileExists(atPath: path)
     }
     //MARK: 创建文件夹
-    public static func createDirectory(_ path: String) throws {
-        try FileManager.default.createDirectory(atPath: path, withIntermediateDirectories: true, attributes: nil)
+    public static func createDirectory(_ path: String) {
+        do {
+            try FileManager.default.createDirectory(atPath: path, withIntermediateDirectories: true, attributes: nil)
+        } catch {
+            ZKLog.error("创建文件夹失败：\(path)")
+        }
     }
     //MARK: 获取单个文件大小
     public static func fileSizeAtPath(_ path: String) -> Double {
@@ -45,7 +50,11 @@ public extension FileManager {
         return size / 1024 / 1024
     }
     //MARK: 删除文件
-    public static func delete(_ path: String) throws {
-        try FileManager.default.removeItem(atPath: path)
+    public static func delete(_ path: String) {
+        do {
+            try FileManager.default.removeItem(atPath: path)
+        } catch {
+            ZKLog.error("删除文件失败：\(path)")
+        }
     }
 }
