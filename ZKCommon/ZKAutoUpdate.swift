@@ -26,9 +26,7 @@ public final class ZKAutoUpdate {
                                         let updateMsg = json["updateMsg"].stringValue
                                         ZKLog.debug("更新内容：\(updateMsg)")
                                         let url = json["url"].stringValue
-                                        ZKLog.debug("更新 Url：\(url)")
-                                        PopupDialogDefaultView.appearance().messageTextAlignment = .left
-                                        let popup = PopupDialog.init(title: "提示", message: updateMsg)
+                                        let popup = PopupDialog(title: "更新提示", message: updateMsg)
                                         popup.buttonAlignment = .horizontal
                                         let cancelButton = CancelButton.init(title: forcedUpdate == 1 ? "取消" : "下次更新", action: nil)
                                         let updateButton: DefaultButton!
@@ -51,7 +49,6 @@ public final class ZKAutoUpdate {
                                         }
                                         popup.addButtons([cancelButton, updateButton])
                                         UIWindow.frontWindow?.rootViewController?.present(popup, animated: true, completion: nil)
-                                        PopupDialogDefaultView.appearance().messageTextAlignment = .center
                                     }
                                 } else {
                                     ZKLog.debug("版本一致：\(version)")
