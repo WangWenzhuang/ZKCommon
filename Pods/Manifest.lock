@@ -1,6 +1,8 @@
 PODS:
   - Alamofire (4.7.1)
-  - PopupDialog (0.5.4)
+  - DynamicBlurView (2.0.2)
+  - PopupDialog (0.7.1):
+    - DynamicBlurView (~> 2.0)
   - SwiftyJSON (4.0.0)
   - ZKLog (1.0)
 
@@ -13,16 +15,18 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
+    - DynamicBlurView
     - PopupDialog
     - SwiftyJSON
     - ZKLog
 
 SPEC CHECKSUMS:
   Alamofire: 68d7d521118d49c615a8d2214d87cdf525599d30
-  PopupDialog: 75cf955693590b0cb2fdde00223fb65d99c57247
+  DynamicBlurView: aa6db4defc6e537eb86fc5e58dd3991666178399
+  PopupDialog: 39598b7d41719f5c025b4b70e62728bae7734fef
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
   ZKLog: 7f89be1aee90afc58ff6a7a1ceb60d9c568dbd7d
 
-PODFILE CHECKSUM: d45eac9569e89a32db4be9620a3abbed5091ee0c
+PODFILE CHECKSUM: 2dd9d73b86589bb3d5e1e36433a2b9b8f5e45983
 
 COCOAPODS: 1.5.0.beta.1

@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name = 'ZKCommon'
   s.version = '3.0'
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.0'
   s.license = { :type => 'MIT', :file => 'LICENSE' }
   s.summary = '我自己常用的扩展、工具等...'
   s.homepage = 'https://github.com/WangWenzhuang/ZKCommon'
