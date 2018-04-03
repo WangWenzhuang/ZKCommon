@@ -21,7 +21,6 @@
 		A05770911F6A916E00CB7DE1 /* UIViewController-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05770901F6A916E00CB7DE1 /* UIViewController-Extension.swift */; };
 		A099EC4F1F0E31A700DA08B4 /* ZKAutoUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A099EC4E1F0E31A700DA08B4 /* ZKAutoUpdate.swift */; };
 		A0C0A5231FDFB5150029EC1E /* ZKJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C0A5221FDFB5150029EC1E /* ZKJson.swift */; };
-		A0CAB8121EB8A1C5001336A7 /* FMDatabase-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CAB8111EB8A1C5001336A7 /* FMDatabase-Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,7 +40,6 @@
 		A05770901F6A916E00CB7DE1 /* UIViewController-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController-Extension.swift"; sourceTree = "<group>"; };
 		A099EC4E1F0E31A700DA08B4 /* ZKAutoUpdate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZKAutoUpdate.swift; sourceTree = "<group>"; };
 		A0C0A5221FDFB5150029EC1E /* ZKJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZKJson.swift; sourceTree = "<group>"; };
-		A0CAB8111EB8A1C5001336A7 /* FMDatabase-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FMDatabase-Extension.swift"; sourceTree = "<group>"; };
 		DB9B6A3728A6E1C258369163 /* Pods_ZKCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZKCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC64D8037A6D20550E75F531 /* Pods-ZKCommon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZKCommon.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZKCommon/Pods-ZKCommon.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -116,7 +114,6 @@
 				A005C90D1EB895E700FEE6F1 /* UIView-Extension.swift */,
 				A005C90E1EB895E700FEE6F1 /* UIWindow-Extension.swift */,
 				A005C90F1EB895E700FEE6F1 /* URL-Extension.swift */,
-				A0CAB8111EB8A1C5001336A7 /* FMDatabase-Extension.swift */,
 				A03C3E891F04D80400E3EDC7 /* FileManager Extension.swift */,
 				A05770901F6A916E00CB7DE1 /* UIViewController-Extension.swift */,
 			);
@@ -154,7 +151,6 @@
 				A005C8F61EB894B800FEE6F1 /* Frameworks */,
 				A005C8F71EB894B800FEE6F1 /* Headers */,
 				A005C8F81EB894B800FEE6F1 /* Resources */,
-				5A0706E38763E8B89983318C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -171,7 +167,7 @@
 		A005C8F11EB894B800FEE6F1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = WangWenzhuang;
 				TargetAttributes = {
 					A005C8F91EB894B800FEE6F1 = {
@@ -227,21 +223,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5A0706E38763E8B89983318C /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZKCommon/Pods-ZKCommon-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -259,7 +240,6 @@
 				A005C9161EB895E700FEE6F1 /* UIView-Extension.swift in Sources */,
 				A05770911F6A916E00CB7DE1 /* UIViewController-Extension.swift in Sources */,
 				A005C9101EB895E700FEE6F1 /* Date-Extension.swift in Sources */,
-				A0CAB8121EB8A1C5001336A7 /* FMDatabase-Extension.swift in Sources */,
 				A005C91C1EB89C3500FEE6F1 /* ZKDevice.swift in Sources */,
 				A005C9171EB895E700FEE6F1 /* UIWindow-Extension.swift in Sources */,
 			);
@@ -282,6 +262,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -289,6 +270,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -342,6 +324,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -349,6 +332,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

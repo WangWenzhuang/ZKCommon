@@ -19,7 +19,7 @@ public extension UIImage {
         }
         //先调整分辨率
         var defaultSize = CGSize(width: 1024, height: 1024)
-        let newImage = self.newSizeImage(size: defaultSize, source_image: self)
+        let newImage = self.newSizeImage(size: defaultSize, sourceImage: self)
         
         finallImageData = UIImageJPEGRepresentation(newImage,1.0);
         
@@ -49,26 +49,26 @@ public extension UIImage {
                 break
             }
             defaultSize = CGSize(width: defaultSize.width-100, height: defaultSize.height-100)
-            let image = self.newSizeImage(size: defaultSize, source_image: UIImage.init(data: UIImageJPEGRepresentation(newImage, compressionQualityArr.lastObject as! CGFloat)!)!)
+            let image = self.newSizeImage(size: defaultSize, sourceImage: UIImage.init(data: UIImageJPEGRepresentation(newImage, compressionQualityArr.lastObject as! CGFloat)!)!)
             finallImageData = self.halfFuntion(arr: compressionQualityArr.copy() as! [CGFloat], image: image, sourceData: UIImageJPEGRepresentation(image,1.0)!, maxSize: maxSize)
         }
         
         return finallImageData!
     }
     //MARK: 调整图片分辨率/尺寸（等比例缩放）
-    private func newSizeImage(size: CGSize, source_image: UIImage) -> UIImage {
-        var newSize = CGSize(width: source_image.size.width, height: source_image.size.height)
+    private func newSizeImage(size: CGSize, sourceImage: UIImage) -> UIImage {
+        var newSize = CGSize(width: sourceImage.size.width, height: sourceImage.size.height)
         let tempHeight = newSize.height / size.height
         let tempWidth = newSize.width / size.width
         
         if tempWidth > 1.0 && tempWidth > tempHeight {
-            newSize = CGSize(width: source_image.size.width / tempWidth, height: source_image.size.height / tempWidth)
+            newSize = CGSize(width: sourceImage.size.width / tempWidth, height: sourceImage.size.height / tempWidth)
         } else if tempHeight > 1.0 && tempWidth < tempHeight {
-            newSize = CGSize(width: source_image.size.width / tempHeight, height: source_image.size.height / tempHeight)
+            newSize = CGSize(width: sourceImage.size.width / tempHeight, height: sourceImage.size.height / tempHeight)
         }
         
         UIGraphicsBeginImageContext(newSize)
-        source_image.draw(in: CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height))
+        sourceImage.draw(in: CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height))
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return newImage!

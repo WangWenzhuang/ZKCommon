@@ -1,36 +1,28 @@
 PODS:
-  - Alamofire (4.5.1)
-  - FMDB (2.6.2):
-    - FMDB/standard (= 2.6.2)
-  - FMDB/standard (2.6.2)
+  - Alamofire (4.7.1)
+  - PopupDialog (0.5.4)
   - SwiftyJSON (4.0.0)
-  - ZKAlamofire (2.0):
-    - Alamofire
-    - SwiftyJSON
-    - ZKLog
-    - ZKProgressHUD
-    - ZKStatusBarNotification
-  - ZKAlertView (2.0)
   - ZKLog (1.0)
-  - ZKProgressHUD (2.0)
-  - ZKStatusBarNotification (1.2)
 
 DEPENDENCIES:
-  - FMDB (~> 2.6.2)
+  - Alamofire
+  - PopupDialog
   - SwiftyJSON
-  - ZKAlamofire
-  - ZKAlertView
+  - ZKLog
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - PopupDialog
+    - SwiftyJSON
+    - ZKLog
 
 SPEC CHECKSUMS:
-  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
-  FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
+  Alamofire: 68d7d521118d49c615a8d2214d87cdf525599d30
+  PopupDialog: 75cf955693590b0cb2fdde00223fb65d99c57247
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
-  ZKAlamofire: 08a242f32dec47301751022681fbb112dbf3a37a
-  ZKAlertView: 6d5031e320fe817d3c36abc405b2fa1f7ee57431
   ZKLog: 7f89be1aee90afc58ff6a7a1ceb60d9c568dbd7d
-  ZKProgressHUD: 73bedb217f3c844db32256e6914667ff59580eed
-  ZKStatusBarNotification: bad7b5d8acbf109f1d0508a6e1c8cd19e3625fc8
 
-PODFILE CHECKSUM: 270ae51b7ebcb22a07d7e2c54f353a4adcf530ef
+PODFILE CHECKSUM: d45eac9569e89a32db4be9620a3abbed5091ee0c
 
-COCOAPODS: 1.4.0.beta.2
+COCOAPODS: 1.5.0.beta.1
