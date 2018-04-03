@@ -28,7 +28,6 @@ public final class ZKAutoUpdate {
                                         let url = json["url"].stringValue
                                         let popup = PopupDialog(title: "更新提示", message: updateMsg)
                                         popup.buttonAlignment = .horizontal
-                                        let cancelButton = CancelButton.init(title: forcedUpdate == 1 ? "取消" : "下次更新", action: nil)
                                         let updateButton: DefaultButton!
                                         // 强制更新
                                         if forcedUpdate == 1 {
@@ -39,6 +38,7 @@ public final class ZKAutoUpdate {
                                                 }
                                                 exit(0)
                                             }
+                                            popup.addButtons([updateButton])
                                         } else {
                                             ZKLog.debug("非强制更新：\(forcedUpdate)")
                                             updateButton = DefaultButton(title: "马上更新", dismissOnTap: true) {
@@ -46,8 +46,9 @@ public final class ZKAutoUpdate {
                                                     UIApplication.shared.openURL(u)
                                                 }
                                             }
+                                            let cancelButton = CancelButton.init(title: "下次更新", action: nil)
+                                            popup.addButtons([cancelButton, updateButton])
                                         }
-                                        popup.addButtons([cancelButton, updateButton])
                                         UIWindow.frontWindow?.rootViewController?.present(popup, animated: true, completion: nil)
                                     }
                                 } else {
