@@ -11,6 +11,7 @@ Pod::Spec.new do |s|
   s.source_files = 'ZKCommon/**/*.swift'
   s.requires_arc = true
   s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.0' }
+  s.dependency 'FMDB'
   s.dependency 'Alamofire'
   s.dependency 'SwiftyJSON'
   s.dependency 'PopupDialog'
