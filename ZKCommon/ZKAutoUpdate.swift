@@ -23,14 +23,14 @@ public final class ZKAutoUpdate {
                                 if oldVersion != version {
                                     if let forcedUpdate = json["forcedUpdate"].int {
                                         let updateMsg = json["updateMsg"].stringValue
-                                        print("更新内容：\(updateMsg)")
+                                        print("ZKCommon -> \(Date.zk.nowString) -> : 更新内容：\(updateMsg)")
                                         let url = json["url"].stringValue
                                         let popup = PopupDialog(title: "更新提示", message: updateMsg)
                                         popup.buttonAlignment = .horizontal
                                         let updateButton: DefaultButton!
                                         // 强制更新
                                         if forcedUpdate == 1 {
-                                            print("强制更新：\(forcedUpdate)")
+                                            print("ZKCommon -> \(Date.zk.nowString) -> : 强制更新(\(forcedUpdate))")
                                             updateButton = DefaultButton(title: "更新", dismissOnTap: true) {
                                                 if let u = URL(string: url) {
                                                     UIApplication.shared.openURL(u)
@@ -39,7 +39,7 @@ public final class ZKAutoUpdate {
                                             }
                                             popup.addButtons([updateButton])
                                         } else {
-                                            print("非强制更新：\(forcedUpdate)")
+                                            print("ZKCommon -> \(Date.zk.nowString) -> : 非强制更新(\(forcedUpdate))")
                                             updateButton = DefaultButton(title: "马上更新", dismissOnTap: true) {
                                                 if let u = URL(string: url) {
                                                     UIApplication.shared.openURL(u)
@@ -51,15 +51,15 @@ public final class ZKAutoUpdate {
                                         UIWindow.zk.frontWindow?.rootViewController?.present(popup, animated: true, completion: nil)
                                     }
                                 } else {
-                                    print("版本一致：\(version)")
+                                    print("ZKCommon -> \(Date.zk.nowString) -> : 版本一致：\(version)")
                                 }
                             }
                         } else {
-                            print("正在审核：\(auditState)")
+                            print("ZKCommon -> \(Date.zk.nowString) -> : 正在审核：\(auditState)")
                         }
                     }
                 case .failure(let error):
-                    print((response.request!.url?.absoluteString)! + "\t请求更新接口失败:\r\(error)")
+                    print("ZKCommon -> \(Date.zk.nowString) -> : \((response.request!.url?.absoluteString)!)\t请求更新接口失败:\r\(error)")
                 }
             }
         }

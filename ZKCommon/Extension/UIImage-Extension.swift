@@ -91,7 +91,7 @@ public extension UIImage {
             let sizeOrigin = tempFinallImageData.count
             let sizeOriginKB = sizeOrigin / 1024
             
-            print("当前降到的质量：\(sizeOriginKB)\n\(index)----\(arr[index])")
+            print("ZKCommon -> \(Date.zk.nowString) -> : 当前降到的质量：\(sizeOriginKB)\n\(index)----\(arr[index])")
             
             if sizeOriginKB > maxSize {
                 start = index + 1

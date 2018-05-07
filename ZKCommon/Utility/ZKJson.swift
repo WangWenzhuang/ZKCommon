@@ -9,14 +9,14 @@
 public final class ZKJson {
     public static func json(_ object: Any) -> String {
         if (!JSONSerialization.isValidJSONObject(object)) {
-            print("无法解析 JSON")
+            print("ZKCommon -> \(Date.zk.nowString) -> : 无法解析 JSON")
             return ""
         }
         do {
             let data = try JSONSerialization.data(withJSONObject: object, options: .prettyPrinted)
             return String(data: data, encoding: .utf8) ?? ""
         } catch {
-            print("无法解析 JSON")
+            print("ZKCommon -> \(Date.zk.nowString) -> : 无法解析 JSON")
             return ""
         }
     }
