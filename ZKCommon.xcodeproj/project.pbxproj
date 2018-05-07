@@ -21,6 +21,8 @@
 		A05770911F6A916E00CB7DE1 /* UIViewController-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05770901F6A916E00CB7DE1 /* UIViewController-Extension.swift */; };
 		A099EC4F1F0E31A700DA08B4 /* ZKAutoUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A099EC4E1F0E31A700DA08B4 /* ZKAutoUpdate.swift */; };
 		A0C0A5231FDFB5150029EC1E /* ZKJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C0A5221FDFB5150029EC1E /* ZKJson.swift */; };
+		A0C3DC7D20A0234C00431E86 /* FMDatabase-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C3DC7C20A0234C00431E86 /* FMDatabase-Extension.swift */; };
+		A0C3DC7F20A0239000431E86 /* PopupDialog-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C3DC7E20A0239000431E86 /* PopupDialog-Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		A05770901F6A916E00CB7DE1 /* UIViewController-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController-Extension.swift"; sourceTree = "<group>"; };
 		A099EC4E1F0E31A700DA08B4 /* ZKAutoUpdate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZKAutoUpdate.swift; sourceTree = "<group>"; };
 		A0C0A5221FDFB5150029EC1E /* ZKJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZKJson.swift; sourceTree = "<group>"; };
+		A0C3DC7C20A0234C00431E86 /* FMDatabase-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FMDatabase-Extension.swift"; sourceTree = "<group>"; };
+		A0C3DC7E20A0239000431E86 /* PopupDialog-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PopupDialog-Extension.swift"; sourceTree = "<group>"; };
 		DB9B6A3728A6E1C258369163 /* Pods_ZKCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZKCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC64D8037A6D20550E75F531 /* Pods-ZKCommon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZKCommon.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZKCommon/Pods-ZKCommon.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -107,14 +111,16 @@
 		A005C9061EB895D900FEE6F1 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				A005C90F1EB895E700FEE6F1 /* URL-Extension.swift */,
 				A005C9071EB895E700FEE6F1 /* Date-Extension.swift */,
 				A005C9091EB895E700FEE6F1 /* String-Extension.swift */,
+				A005C90D1EB895E700FEE6F1 /* UIView-Extension.swift */,
 				A005C90A1EB895E700FEE6F1 /* UIColor-Extension.swift */,
 				A005C90B1EB895E700FEE6F1 /* UIImage-Extension.swift */,
-				A005C90D1EB895E700FEE6F1 /* UIView-Extension.swift */,
 				A005C90E1EB895E700FEE6F1 /* UIWindow-Extension.swift */,
-				A005C90F1EB895E700FEE6F1 /* URL-Extension.swift */,
 				A03C3E891F04D80400E3EDC7 /* FileManager Extension.swift */,
+				A0C3DC7E20A0239000431E86 /* PopupDialog-Extension.swift */,
+				A0C3DC7C20A0234C00431E86 /* FMDatabase-Extension.swift */,
 				A05770901F6A916E00CB7DE1 /* UIViewController-Extension.swift */,
 			);
 			path = Extension;
@@ -234,12 +240,14 @@
 				A005C9141EB895E700FEE6F1 /* UIImage-Extension.swift in Sources */,
 				A099EC4F1F0E31A700DA08B4 /* ZKAutoUpdate.swift in Sources */,
 				A005C9181EB895E700FEE6F1 /* URL-Extension.swift in Sources */,
+				A0C3DC7F20A0239000431E86 /* PopupDialog-Extension.swift in Sources */,
 				A0C0A5231FDFB5150029EC1E /* ZKJson.swift in Sources */,
 				A03C3E8A1F04D80400E3EDC7 /* FileManager Extension.swift in Sources */,
 				A005C9131EB895E700FEE6F1 /* UIColor-Extension.swift in Sources */,
 				A005C9161EB895E700FEE6F1 /* UIView-Extension.swift in Sources */,
 				A05770911F6A916E00CB7DE1 /* UIViewController-Extension.swift in Sources */,
 				A005C9101EB895E700FEE6F1 /* Date-Extension.swift in Sources */,
+				A0C3DC7D20A0234C00431E86 /* FMDatabase-Extension.swift in Sources */,
 				A005C91C1EB89C3500FEE6F1 /* ZKDevice.swift in Sources */,
 				A005C9171EB895E700FEE6F1 /* UIWindow-Extension.swift in Sources */,
 			);

@@ -6,8 +6,6 @@
 //  Copyright © 2017年 WangWenzhuang. All rights reserved.
 //
 
-import ZKLog
-
 public extension FileManager {
     //MARK: 判断文件或文件夹是否存在
     public static func exists(_ path: String) -> Bool {
@@ -18,7 +16,7 @@ public extension FileManager {
         do {
             try FileManager.default.createDirectory(atPath: path, withIntermediateDirectories: true, attributes: nil)
         } catch {
-            ZKLog.error("创建文件夹失败：\(path)")
+            print("创建文件夹失败：\(path)")
         }
     }
     //MARK: 获取单个文件大小
@@ -54,7 +52,7 @@ public extension FileManager {
         do {
             try FileManager.default.removeItem(atPath: path)
         } catch {
-            ZKLog.error("删除文件失败：\(path)")
+            print("删除文件失败：\(path)")
         }
     }
 }

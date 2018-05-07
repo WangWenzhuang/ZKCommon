@@ -8,15 +8,17 @@
 
 //MARK: UIWindow
 public extension UIWindow {
-    //MARK: 获得最前 Window
-    public static var frontWindow: UIWindow? {
-        get {
-            let window = UIApplication.shared.windows.reversed().first(where: {
-                $0.screen == UIScreen.main &&
-                    !$0.isHidden && $0.alpha > 0 &&
-                    $0.windowLevel == UIWindowLevelNormal
-            })
-            return window
+    public final class zk {
+        //MARK: 获得最前 Window
+        public static var frontWindow: UIWindow? {
+            get {
+                let window = UIApplication.shared.windows.reversed().first(where: {
+                    $0.screen == UIScreen.main &&
+                        !$0.isHidden && $0.alpha > 0 &&
+                        $0.windowLevel == UIWindowLevelNormal
+                })
+                return window
+            }
         }
     }
 }

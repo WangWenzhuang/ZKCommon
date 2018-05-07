@@ -25,4 +25,27 @@ public extension UIViewController {
             return self.tabBarController?.tabBar.height ?? 0
         }
     }
+    public func push(_ viewController: UIViewController) {
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    public func pop() {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    public func popToRoot() {
+        self.navigationController?.popToRootViewController(animated: true)
+    }
+    
+    public func popToViewController(_ viewController: UIViewController) {
+        self.navigationController?.popToViewController(viewController, animated: true)
+    }
+    
+    public func present(_ viewControllerToPresent: UIViewController) {
+        self.present(viewControllerToPresent, animated: true)
+    }
+    
+    func dismiss() {
+        self.dismiss(animated: true, completion: nil)
+    }
 }

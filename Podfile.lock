@@ -1,32 +1,34 @@
 PODS:
-  - Alamofire (4.7.1)
+  - Alamofire (4.7.2)
   - DynamicBlurView (2.0.2)
+  - FMDB (2.7.2):
+    - FMDB/standard (= 2.7.2)
+  - FMDB/standard (2.7.2)
   - PopupDialog (0.7.1):
     - DynamicBlurView (~> 2.0)
-  - SwiftyJSON (4.0.0)
-  - ZKLog (1.0)
+  - SwiftyJSON (4.1.0)
 
 DEPENDENCIES:
   - Alamofire
+  - FMDB
   - PopupDialog
   - SwiftyJSON
-  - ZKLog
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - DynamicBlurView
+    - FMDB
     - PopupDialog
     - SwiftyJSON
-    - ZKLog
 
 SPEC CHECKSUMS:
-  Alamofire: 68d7d521118d49c615a8d2214d87cdf525599d30
+  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
   DynamicBlurView: aa6db4defc6e537eb86fc5e58dd3991666178399
+  FMDB: 6198a90e7b6900cfc046e6bc0ef6ebb7be9236aa
   PopupDialog: 39598b7d41719f5c025b4b70e62728bae7734fef
-  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
-  ZKLog: 7f89be1aee90afc58ff6a7a1ceb60d9c568dbd7d
+  SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
 
-PODFILE CHECKSUM: 2dd9d73b86589bb3d5e1e36433a2b9b8f5e45983
+PODFILE CHECKSUM: d45e4cc80d201b91bc438648c924fe7c0de116ee
 
-COCOAPODS: 1.5.0.beta.1
+COCOAPODS: 1.5.0

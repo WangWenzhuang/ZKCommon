@@ -10,6 +10,15 @@ import JavaScriptCore
 
 //MARK: UIImage
 public extension String {
+    public final class zk {
+        public static func isNilOrEmpty(_ value: Optional<String>) -> Bool {
+            if let str = value {
+                return str.isEmpty
+            } else {
+                return true
+            }
+        }
+    }
     //MARK: urlEncode 字符串
     public var urlEncode: String {
         get {

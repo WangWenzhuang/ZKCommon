@@ -6,7 +6,6 @@
 //  Copyright © 2017年 WangWenzhuang. All rights reserved.
 //
 
-import ZKLog
 import Alamofire
 import SwiftyJSON
 import PopupDialog
@@ -24,14 +23,14 @@ public final class ZKAutoUpdate {
                                 if oldVersion != version {
                                     if let forcedUpdate = json["forcedUpdate"].int {
                                         let updateMsg = json["updateMsg"].stringValue
-                                        ZKLog.debug("更新内容：\(updateMsg)")
+                                        print("更新内容：\(updateMsg)")
                                         let url = json["url"].stringValue
                                         let popup = PopupDialog(title: "更新提示", message: updateMsg)
                                         popup.buttonAlignment = .horizontal
                                         let updateButton: DefaultButton!
                                         // 强制更新
                                         if forcedUpdate == 1 {
-                                            ZKLog.debug("强制更新：\(forcedUpdate)")
+                                            print("强制更新：\(forcedUpdate)")
                                             updateButton = DefaultButton(title: "更新", dismissOnTap: true) {
                                                 if let u = URL(string: url) {
                                                     UIApplication.shared.openURL(u)
@@ -40,7 +39,7 @@ public final class ZKAutoUpdate {
                                             }
                                             popup.addButtons([updateButton])
                                         } else {
-                                            ZKLog.debug("非强制更新：\(forcedUpdate)")
+                                            print("非强制更新：\(forcedUpdate)")
                                             updateButton = DefaultButton(title: "马上更新", dismissOnTap: true) {
                                                 if let u = URL(string: url) {
                                                     UIApplication.shared.openURL(u)
@@ -49,18 +48,18 @@ public final class ZKAutoUpdate {
                                             let cancelButton = CancelButton.init(title: "下次更新", action: nil)
                                             popup.addButtons([cancelButton, updateButton])
                                         }
-                                        UIWindow.frontWindow?.rootViewController?.present(popup, animated: true, completion: nil)
+                                        UIWindow.zk.frontWindow?.rootViewController?.present(popup, animated: true, completion: nil)
                                     }
                                 } else {
-                                    ZKLog.debug("版本一致：\(version)")
+                                    print("版本一致：\(version)")
                                 }
                             }
                         } else {
-                            ZKLog.debug("正在审核：\(auditState)")
+                            print("正在审核：\(auditState)")
                         }
                     }
                 case .failure(let error):
-                    ZKLog.error((response.request!.url?.absoluteString)! + "\t请求更新接口失败:\r\(error)")
+                    print((response.request!.url?.absoluteString)! + "\t请求更新接口失败:\r\(error)")
                 }
             }
         }

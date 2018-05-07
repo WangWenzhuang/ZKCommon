@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'ZKCommon'
-  s.version = '3.0.2'
+  s.version = '3.0.3'
   s.ios.deployment_target = '9.0'
   s.license = { :type => 'MIT', :file => 'LICENSE' }
   s.summary = '我自己常用的扩展、工具等...'
@@ -11,7 +11,6 @@ Pod::Spec.new do |s|
   s.source_files = 'ZKCommon/**/*.swift'
   s.requires_arc = true
   s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.0' }
-  s.dependency 'ZKLog'
   s.dependency 'Alamofire'
   s.dependency 'SwiftyJSON'
   s.dependency 'PopupDialog'
