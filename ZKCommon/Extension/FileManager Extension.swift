@@ -7,11 +7,11 @@
 //
 
 public extension FileManager {
-    //MARK: 判断文件或文件夹是否存在
+    /// 判断文件或文件夹是否存在
     public static func exists(_ path: String) -> Bool {
         return FileManager.default.fileExists(atPath: path)
     }
-    //MARK: 创建文件夹
+    /// 创建文件夹
     public static func createDirectory(_ path: String) {
         do {
             try FileManager.default.createDirectory(atPath: path, withIntermediateDirectories: true, attributes: nil)
@@ -19,7 +19,7 @@ public extension FileManager {
             print("ZKCommon -> \(Date.zk.nowString) -> : 创建文件夹失败：\(path)")
         }
     }
-    //MARK: 获取单个文件大小
+    /// 获取单个文件大小
     public static func fileSizeAtPath(_ path: String) -> Double {
         var size: Double = 0
         if FileManager.exists(path) {
@@ -31,7 +31,7 @@ public extension FileManager {
         }
         return size
     }
-    //MARK: 获取文件夹大小
+    /// 获取文件夹大小
     public static func folderSizeAtPath(_ path: String) -> Double
     {
         var size: Double = 0
@@ -47,7 +47,7 @@ public extension FileManager {
         }
         return size / 1024 / 1024
     }
-    //MARK: 删除文件
+    /// 删除文件
     public static func delete(_ path: String) {
         do {
             try FileManager.default.removeItem(atPath: path)

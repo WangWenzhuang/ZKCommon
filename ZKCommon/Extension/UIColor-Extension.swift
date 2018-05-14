@@ -6,14 +6,14 @@
 //  Copyright © 2017年 WangWenzhuang. All rights reserved.
 //
 
-//MARK: UIImage
+/// UIImage
 public extension UIColor {
     public final class zk {
-        //MARK: 根据 rgb 构建颜色
+        /// 根据 rgb 构建颜色
         public static func rgb(_ r: CGFloat, _ g: CGFloat, _ b: CGFloat) -> UIColor {
             return UIColor(red: r / 255.0, green: g / 255.0, blue: b / 255.0, alpha: 1.0)
         }
-        //MARK: 根据 rgb 和透明度构建颜色
+        /// 根据 rgb 和透明度构建颜色
         public static func rgbAlpha(_ r: CGFloat, _ g: CGFloat, _ b: CGFloat, _ a: CGFloat) -> UIColor {
             return UIColor(red: r / 255.0, green: g / 255.0, blue: b / 255.0, alpha: a)
         }

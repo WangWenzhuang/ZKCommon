@@ -6,10 +6,10 @@
 //  Copyright © 2017年 WangWenzhuang. All rights reserved.
 //
 
-//MARK: UIWindow
+/// UIWindow
 public extension UIWindow {
     public final class zk {
-        //MARK: 获得最前 Window
+        /// 获得最前 Window
         public static var frontWindow: UIWindow? {
             get {
                 let window = UIApplication.shared.windows.reversed().first(where: {

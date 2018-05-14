@@ -6,9 +6,9 @@
 //  Copyright © 2017年 WangWenzhuang. All rights reserved.
 //
 
-//MARK: UIImage
+/// UIImage
 public extension UIImage {
-    //MARK: 压缩
+    /// 压缩
     public func compression(_ maxSize: Int) -> Data {
         //先判断当前质量是否满足要求，不满足再进行压缩
         var finallImageData = UIImageJPEGRepresentation(self, 1.0)
@@ -55,7 +55,7 @@ public extension UIImage {
         
         return finallImageData!
     }
-    //MARK: 调整图片分辨率/尺寸（等比例缩放）
+    /// 调整图片分辨率/尺寸（等比例缩放）
     private func newSizeImage(size: CGSize, sourceImage: UIImage) -> UIImage {
         var newSize = CGSize(width: sourceImage.size.width, height: sourceImage.size.height)
         let tempHeight = newSize.height / size.height
@@ -73,7 +73,7 @@ public extension UIImage {
         UIGraphicsEndImageContext()
         return newImage!
     }
-    //MARK: 二分法
+    /// 二分法
     private func halfFuntion(arr: [CGFloat], image: UIImage, sourceData finallImageData: Data, maxSize: Int) -> Data? {
         var tempFinallImageData = finallImageData
         
