@@ -22,5 +22,11 @@ public extension Date {
             format.dateFormat = formatString
             return format.string(from: Date())
         }
+        /// 根据时间字符串转换 Date
+        public static func date(_ dateString: String, _ formatString: String = "yyyy-MM-dd HH:mm:ss") -> Date? {
+            let format = DateFormatter()
+            format.dateFormat = formatString
+            return format.date(from: date)
+        }
     }
 }
