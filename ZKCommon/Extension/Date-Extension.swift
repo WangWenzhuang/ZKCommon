@@ -26,7 +26,7 @@ public extension Date {
         public static func date(_ dateString: String, _ formatString: String = "yyyy-MM-dd HH:mm:ss") -> Date? {
             let format = DateFormatter()
             format.dateFormat = formatString
-            return format.date(from: date)
+            return format.date(from: dateString)
         }
     }
 }
