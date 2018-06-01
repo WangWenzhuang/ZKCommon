@@ -10,7 +10,7 @@ import UIKit
 
 public extension UUID {
     public final class zk {
-        static var id: String {
+        public static var id: String {
             get {
                 return NSString(string: UUID().uuidString).replacingOccurrences(of: "-", with: "")
             }
