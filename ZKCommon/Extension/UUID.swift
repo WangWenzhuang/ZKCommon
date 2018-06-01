@@ -8,8 +8,8 @@
 
 import UIKit
 
-extension UUID {
-    final class zk {
+public extension UUID {
+    public final class zk {
         static var id: String {
             get {
                 return NSString(string: UUID().uuidString).replacingOccurrences(of: "-", with: "")
