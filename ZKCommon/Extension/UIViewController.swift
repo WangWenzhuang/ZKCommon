@@ -27,6 +27,18 @@ public extension UIViewController {
             return self.tabBarController?.tabBar.height ?? 0
         }
     }
+    /// view 的 widht
+    public var widht: CGFloat {
+        get {
+            return self.view.width
+        }
+    }
+    /// view 的 height
+    public var height: CGFloat {
+        get {
+            return self.view.height
+        }
+    }
     public func push(_ viewController: UIViewController) {
         self.navigationController?.pushViewController(viewController, animated: true)
     }
