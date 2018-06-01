@@ -28,7 +28,7 @@ public extension UIViewController {
         }
     }
     /// view 的 widht
-    public var widht: CGFloat {
+    public var width: CGFloat {
         get {
             return self.view.width
         }
