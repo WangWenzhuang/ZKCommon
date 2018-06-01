@@ -1,6 +1,5 @@
-osx_image: xcode9.
+osx_image: xcode9.3
 language: swift
 
 xcode_project: ZKCommon.xcworkspace
 xcode_scheme: ZKCommon
-xcode_sdk: iphonesimulator
