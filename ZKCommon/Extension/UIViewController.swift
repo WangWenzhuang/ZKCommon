@@ -1,10 +1,12 @@
 //
-//  UIViewController-Extension.swift
+//  UIViewController.swift
 //  ZKCommon
 //
 //  Created by 王文壮 on 2017/9/14.
 //  Copyright © 2017年 WangWenzhuang. All rights reserved.
 //
+
+import UIKit
 
 public extension UIViewController {
     /// 导航栏高度
@@ -45,7 +47,7 @@ public extension UIViewController {
         self.present(viewControllerToPresent, animated: true)
     }
     
-    func dismiss() {
+    public func dismiss() {
         self.dismiss(animated: true, completion: nil)
     }
 }

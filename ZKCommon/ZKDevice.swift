@@ -6,6 +6,8 @@
 //  Copyright © 2017年 WangWenzhuang. All rights reserved.
 //
 
+import UIKit
+
 /// ZKDevice
 public enum ZKiPhoneModel: Int {
     case iPhone4
@@ -13,18 +15,7 @@ public enum ZKiPhoneModel: Int {
     case iPhone67
     case iPhone67Plus
 }
-/// 屏幕宽度
-public var ZKScreenWidth: CGFloat {
-    get {
-        return UIScreen.main.bounds.size.width
-    }
-}
-/// 屏幕高度
-public var ZKScreenHeight: CGFloat {
-    get {
-        return UIScreen.main.bounds.size.height
-    }
-}
+
 /// 状态栏高度
 public var ZKStatusBarHeight: CGFloat {
     get {

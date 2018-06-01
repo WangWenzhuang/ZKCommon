@@ -1,10 +1,12 @@
 //
-//  UIWindow-Extension.swift
+//  UIWindow.swift
 //  ZKCommon
 //
 //  Created by 王文壮 on 2017/5/2.
 //  Copyright © 2017年 WangWenzhuang. All rights reserved.
 //
+
+import UIKit
 
 /// UIWindow
 public extension UIWindow {

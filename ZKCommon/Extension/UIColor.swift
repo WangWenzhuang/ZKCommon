@@ -1,12 +1,14 @@
 //
-//  UIColor-Extension.swift
+//  UIColor.swift
 //  ZKCommon
 //
 //  Created by 王文壮 on 2017/5/2.
 //  Copyright © 2017年 WangWenzhuang. All rights reserved.
 //
 
-/// UIImage
+import UIKit
+
+/// UIColor
 public extension UIColor {
     public final class zk {
         /// 根据 rgb 构建颜色

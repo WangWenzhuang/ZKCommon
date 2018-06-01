@@ -1,10 +1,12 @@
 //
-//  UIView-Extension.swift
+//  UIView.swift
 //  ZKCommon
 //
 //  Created by 王文壮 on 2017/2/23.
 //  Copyright © 2017年 北京亿和博嘉教育科技有限公司. All rights reserved.
 //
+
+import UIKit
 
 /// UIView
 public extension UIView {

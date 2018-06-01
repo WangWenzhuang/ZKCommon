@@ -6,6 +6,8 @@
 //  Copyright © 2017年 WangWenzhuang. All rights reserved.
 //
 
+import UIKit
+
 public final class ZKJson {
     public static func json(_ object: Any) -> String {
         if (!JSONSerialization.isValidJSONObject(object)) {

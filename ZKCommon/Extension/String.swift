@@ -1,11 +1,12 @@
 //
-//  String-Extension.swift
+//  String.swift
 //  ZKCommon
 //
 //  Created by 王文壮 on 2017/5/2.
 //  Copyright © 2017年 WangWenzhuang. All rights reserved.
 //
 
+import UIKit
 import JavaScriptCore
 
 /// UIImage
