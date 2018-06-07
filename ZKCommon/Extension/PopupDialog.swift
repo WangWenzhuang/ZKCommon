@@ -46,7 +46,20 @@ public extension PopupDialog {
                 popup.addButtons([otherButton])
             }
             popup.buttonAlignment = .horizontal
-            UIWindow.zk.frontWindow?.rootViewController?.present(popup)
+            self.topViewController()?.present(popup)
+        }
+        
+        private static func topViewController(_ vc: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController? {
+            if let nav = vc as? UINavigationController {
+                return topViewController(nav.visibleViewController)
+            }
+            if let tab = vc as? UITabBarController {
+                return topViewController(tab.selectedViewController)
+            }
+            if let presented = vc?.presentedViewController {
+                return topViewController(presented)
+            }
+            return vc
         }
     }
 }
