@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'ZKCommon'
-  s.version = '3.4'
+  s.version = '3.5'
   s.ios.deployment_target = '9.0'
   s.license = { :type => 'MIT', :file => 'LICENSE' }
   s.summary = '我自己常用的扩展、工具等...'
@@ -12,7 +12,10 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.0' }
   s.dependency 'FMDB'
+  s.dependency 'Then'
   s.dependency 'Alamofire'
   s.dependency 'SwiftyJSON'
   s.dependency 'PopupDialog'
+  s.dependency 'ObjectMapper'
+  s.dependency 'CleanroomLogger'
 end

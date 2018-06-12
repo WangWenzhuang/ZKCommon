@@ -31,9 +31,13 @@ public extension String {
     }
     /// 字符串 size
     public func size(_ font: UIFont, width: CGFloat) -> CGSize {
-        let attribute = [ NSAttributedStringKey.font: font ]
         let conten = NSString(string: self)
-        return conten.boundingRect(with: CGSize(width: width, height: UIScreen.main.bounds.size.height), options: .usesLineFragmentOrigin, attributes: attribute, context: nil).size
+        return conten.boundingRect(
+            with: CGSize(width: width, height: UIScreen.main.bounds.size.height),
+            options: .usesLineFragmentOrigin,
+            attributes: [ NSAttributedStringKey.font: font ],
+            context: nil
+        ).size
     }
     /// 是否是手机号
     public func isMobileNumber() -> Bool {

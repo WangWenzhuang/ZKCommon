@@ -1,34 +1,46 @@
 PODS:
   - Alamofire (4.7.2)
+  - CleanroomLogger (5.1.1)
   - DynamicBlurView (2.0.2)
   - FMDB (2.7.2):
     - FMDB/standard (= 2.7.2)
   - FMDB/standard (2.7.2)
+  - ObjectMapper (3.2.0)
   - PopupDialog (0.7.1):
     - DynamicBlurView (~> 2.0)
   - SwiftyJSON (4.1.0)
+  - Then (2.3.0)
 
 DEPENDENCIES:
   - Alamofire
+  - CleanroomLogger
   - FMDB
+  - ObjectMapper
   - PopupDialog
   - SwiftyJSON
+  - Then
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - Alamofire
+    - CleanroomLogger
     - DynamicBlurView
     - FMDB
+    - ObjectMapper
     - PopupDialog
     - SwiftyJSON
+    - Then
 
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  CleanroomLogger: d921cc92d8e89c067653c0700b74a96b4e07fdab
   DynamicBlurView: aa6db4defc6e537eb86fc5e58dd3991666178399
   FMDB: 6198a90e7b6900cfc046e6bc0ef6ebb7be9236aa
+  ObjectMapper: 5cccd2de6f253eda859df8116a5a554d9769e859
   PopupDialog: 39598b7d41719f5c025b4b70e62728bae7734fef
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
+  Then: ee21c97b85ff6062b9b0080c9abb1eea46743345
 
-PODFILE CHECKSUM: d45e4cc80d201b91bc438648c924fe7c0de116ee
+PODFILE CHECKSUM: a68719be91361e965b44c09e7b2653d9b541926f
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.3

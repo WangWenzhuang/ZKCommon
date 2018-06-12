@@ -9,6 +9,7 @@
 import Alamofire
 import SwiftyJSON
 import PopupDialog
+import CleanroomLogger
 
 public final class ZKAutoUpdate {
     public static func start(url: String, oldVersion: String) {
@@ -23,43 +24,36 @@ public final class ZKAutoUpdate {
                                 if oldVersion != version {
                                     if let forcedUpdate = json["forcedUpdate"].int {
                                         let updateMsg = json["updateMsg"].stringValue
-                                        print("ZKCommon -> \(Date.zk.nowString) -> : 更新内容：\(updateMsg)")
+                                        Log.debug?.message("更新内容：\(updateMsg)")
                                         let url = json["url"].stringValue
-                                        let popup = PopupDialog(title: "更新提示", message: updateMsg)
-                                        popup.buttonAlignment = .horizontal
-                                        let updateButton: DefaultButton!
                                         // 强制更新
                                         if forcedUpdate == 1 {
-                                            print("ZKCommon -> \(Date.zk.nowString) -> : 强制更新(\(forcedUpdate))")
-                                            updateButton = DefaultButton(title: "更新", dismissOnTap: true) {
+                                            Log.debug?.message("强制更新(\(forcedUpdate))")
+                                            PopupDialog.zk.show("更新提示", message: updateMsg, buttonTitle: "更新", completion: {
                                                 if let u = URL(string: url) {
                                                     UIApplication.shared.openURL(u)
                                                 }
                                                 exit(0)
-                                            }
-                                            popup.addButtons([updateButton])
+                                            })
                                         } else {
-                                            print("ZKCommon -> \(Date.zk.nowString) -> : 非强制更新(\(forcedUpdate))")
-                                            updateButton = DefaultButton(title: "马上更新", dismissOnTap: true) {
+                                            Log.debug?.message("非强制更新(\(forcedUpdate))")
+                                            PopupDialog.zk.show("更新提示", message: updateMsg, otherButtonTitle: "马上更新", cancelTitle: "下次更新", completion: {
                                                 if let u = URL(string: url) {
                                                     UIApplication.shared.openURL(u)
                                                 }
-                                            }
-                                            let cancelButton = CancelButton.init(title: "下次更新", action: nil)
-                                            popup.addButtons([cancelButton, updateButton])
+                                            })
                                         }
-                                        UIWindow.zk.frontWindow?.rootViewController?.present(popup, animated: true, completion: nil)
                                     }
                                 } else {
-                                    print("ZKCommon -> \(Date.zk.nowString) -> : 版本一致：\(version)")
+                                    Log.debug?.message("版本一致：\(version)")
                                 }
                             }
                         } else {
-                            print("ZKCommon -> \(Date.zk.nowString) -> : 正在审核：\(auditState)")
+                            Log.debug?.message("正在审核：\(auditState)")
                         }
                     }
                 case .failure(let error):
-                    print("ZKCommon -> \(Date.zk.nowString) -> : \((response.request!.url?.absoluteString)!)\t请求更新接口失败:\r\(error)")
+                    Log.debug?.message("请求更新接口失败：\(error)")
                 }
             }
         }

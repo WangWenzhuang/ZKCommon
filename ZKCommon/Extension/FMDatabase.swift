@@ -9,13 +9,14 @@
 import FMDB
 
 public extension FMDatabase {
-    
-    public static var dbFilePath = ""
-    
-    public static func manager(_ dbFilePath: String? = nil) -> FMDatabase {
-        let db = FMDatabase(path: dbFilePath ?? self.dbFilePath)
-        let isOpen = db.open()
-        assert(isOpen, "打开数据库失败")
-        return db
+    public final class zk {
+        public static var dbFilePath = ""
+        
+        public static func manager(_ dbFilePath: String? = nil) -> FMDatabase {
+            let db = FMDatabase(path: dbFilePath ?? self.dbFilePath)
+            let isOpen = db.open()
+            assert(isOpen, "打开数据库失败")
+            return db
+        }
     }
 }
