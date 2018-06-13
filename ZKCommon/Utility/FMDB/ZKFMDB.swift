@@ -18,44 +18,38 @@ public final class ZKFMDBQueue {
         values: [Any]? = nil,
         completion: ((_ result: Int) -> Void)
     ) {
-        FMDatabaseQueue(path: FMDatabase.zk.dbFilePath).do {
-            $0.inTransaction { db, rollback in
-                var result: Int = 0
-                do {
-                    let table = try db.executeQuery(sql, values: values)
-                    if table.next() {
-                        result = Int(table.int(forColumnIndex: 0))
-                    }
-                } catch let error {
-                    
-                    Log.error?.value(error)
+        let queue = FMDatabaseQueue(path: FMDatabase.zk.dbFilePath)
+        queue.inTransaction { db, rollback in
+            var result: Int = 0
+            do {
+                let table = try db.executeQuery(sql, values: values)
+                if table.next() {
+                    result = Int(table.int(forColumnIndex: 0))
                 }
-                db.close()
-                completion(result)
+            } catch let error {
+                
+                Log.error?.value(error)
             }
+            completion(result)
         }
     }
     
     public static func executNoQuery(_ sql: String, values: [Any]? = nil) {
-        FMDatabaseQueue(path: FMDatabase.zk.dbFilePath).do {
-            $0.inTransaction { db, rollback in
-                do {
-                    try db.executeUpdate(sql, values: values)
-                } catch {
-                    rollback.pointee = true
-                    Log.error?.value(error)
-                }
-                db.close()
+        let queue = FMDatabaseQueue(path: FMDatabase.zk.dbFilePath)
+        queue.inTransaction { db, rollback in
+            do {
+                try db.executeUpdate(sql, values: values)
+            } catch {
+                rollback.pointee = true
+                Log.error?.value(error)
             }
         }
     }
     
     public static func executeStatements(_ sql: String) {
-        FMDatabaseQueue(path: FMDatabase.zk.dbFilePath).do {
-            $0.inTransaction { db, rollback in
-                db.executeStatements(sql)
-            }
-            $0.close()
+        let queue = FMDatabaseQueue(path: FMDatabase.zk.dbFilePath)
+        queue.inTransaction { db, rollback in
+            db.executeStatements(sql)
         }
     }
 }
@@ -101,11 +95,10 @@ public final class ZKFMDBQueryQueue<T> where T: ZKModel {
         _ sql: String,
         values: [Any]? = nil,
         completion: ((_ list: [T]) -> Void)
-        ) {
-        FMDatabaseQueue(path: FMDatabase.zk.dbFilePath).do {
-            $0.inTransaction { db, rollback in
-                completion(ZKFMDBConvert<T>.query(db, sql: sql, values: values))
-            }
+    ) {
+        let queue = FMDatabaseQueue(path: FMDatabase.zk.dbFilePath)
+        queue.inTransaction { db, rollback in
+            completion(ZKFMDBConvert<T>.query(db, sql: sql, values: values))
         }
     }
 }
