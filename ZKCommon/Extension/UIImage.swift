@@ -22,22 +22,21 @@ public extension UIImage {
         //先调整分辨率
         var defaultSize = CGSize(width: 1024, height: 1024)
         let newImage = self.newSizeImage(size: defaultSize, sourceImage: self)
-        
-        finallImageData = UIImageJPEGRepresentation(newImage,1.0);
-        
+
+        finallImageData = UIImageJPEGRepresentation(newImage, 1.0)
+
         //保存压缩系数
         let compressionQualityArr = NSMutableArray()
         let avg = CGFloat(1.0/250)
         var value = avg
-        
+
         var i = 250
         repeat {
             i -= 1
             value = CGFloat(i)*avg
             compressionQualityArr.add(value)
         } while i >= 1
-        
-        
+
         /*
          调整大小
          说明：压缩系数数组compressionQualityArr是从大到小存储。
@@ -52,9 +51,9 @@ public extension UIImage {
             }
             defaultSize = CGSize(width: defaultSize.width-100, height: defaultSize.height-100)
             let image = self.newSizeImage(size: defaultSize, sourceImage: UIImage.init(data: UIImageJPEGRepresentation(newImage, compressionQualityArr.lastObject as! CGFloat)!)!)
-            finallImageData = self.halfFuntion(arr: compressionQualityArr.copy() as! [CGFloat], image: image, sourceData: UIImageJPEGRepresentation(image,1.0)!, maxSize: maxSize)
+            finallImageData = self.halfFuntion(arr: compressionQualityArr.copy() as! [CGFloat], image: image, sourceData: UIImageJPEGRepresentation(image, 1.0)!, maxSize: maxSize)
         }
-        
+
         return finallImageData!
     }
     /// 调整图片分辨率/尺寸（等比例缩放）
@@ -62,13 +61,13 @@ public extension UIImage {
         var newSize = CGSize(width: sourceImage.size.width, height: sourceImage.size.height)
         let tempHeight = newSize.height / size.height
         let tempWidth = newSize.width / size.width
-        
+
         if tempWidth > 1.0 && tempWidth > tempHeight {
             newSize = CGSize(width: sourceImage.size.width / tempWidth, height: sourceImage.size.height / tempWidth)
         } else if tempHeight > 1.0 && tempWidth < tempHeight {
             newSize = CGSize(width: sourceImage.size.width / tempHeight, height: sourceImage.size.height / tempHeight)
         }
-        
+
         UIGraphicsBeginImageContext(newSize)
         sourceImage.draw(in: CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height))
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
@@ -78,23 +77,23 @@ public extension UIImage {
     /// 二分法
     private func halfFuntion(arr: [CGFloat], image: UIImage, sourceData finallImageData: Data, maxSize: Int) -> Data? {
         var tempFinallImageData = finallImageData
-        
+
         var tempData = Data.init()
         var start = 0
         var end = arr.count - 1
         var index = 0
-        
+
         var difference = Int.max
         while start <= end {
             index = start + (end - start)/2
-            
+
             tempFinallImageData = UIImageJPEGRepresentation(image, arr[index])!
-            
+
             let sizeOrigin = tempFinallImageData.count
             let sizeOriginKB = sizeOrigin / 1024
-            
+
             print("ZKCommon -> \(Date.zk.nowString) -> : 当前降到的质量：\(sizeOriginKB)\n\(index)----\(arr[index])")
-            
+
             if sizeOriginKB > maxSize {
                 start = index + 1
             } else if sizeOriginKB < maxSize {

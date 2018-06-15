@@ -19,7 +19,7 @@ public final class ZKFMDBQueue {
         completion: ((_ result: Int) -> Void)
     ) {
         let queue = FMDatabaseQueue(path: FMDatabase.zk.dbFilePath)
-        queue.inTransaction { db, rollback in
+        queue.inTransaction { db, _ in
             var result: Int = 0
             do {
                 let table = try db.executeQuery(sql, values: values)
@@ -27,13 +27,13 @@ public final class ZKFMDBQueue {
                     result = Int(table.int(forColumnIndex: 0))
                 }
             } catch let error {
-                
+
                 Log.error?.value(error)
             }
             completion(result)
         }
     }
-    
+
     public static func executNoQuery(_ sql: String, values: [Any]? = nil) {
         let queue = FMDatabaseQueue(path: FMDatabase.zk.dbFilePath)
         queue.inTransaction { db, rollback in
@@ -45,10 +45,10 @@ public final class ZKFMDBQueue {
             }
         }
     }
-    
+
     public static func executeStatements(_ sql: String) {
         let queue = FMDatabaseQueue(path: FMDatabase.zk.dbFilePath)
-        queue.inTransaction { db, rollback in
+        queue.inTransaction { db, _ in
             db.executeStatements(sql)
         }
     }
@@ -70,7 +70,7 @@ public final class ZKFMDB {
         }
         return result
     }
-    
+
     public static func executNoQuery(_ sql: String, values: [Any]? = nil) {
         FMDatabase.zk.manager().do {
             do {
@@ -81,7 +81,7 @@ public final class ZKFMDB {
             $0.close()
         }
     }
-    
+
     public static func executeStatements(_ sql: String) {
         FMDatabase.zk.manager().do {
             $0.executeStatements(sql)
@@ -97,7 +97,7 @@ public final class ZKFMDBQueryQueue<T> where T: ZKModel {
         completion: ((_ list: [T]) -> Void)
     ) {
         let queue = FMDatabaseQueue(path: FMDatabase.zk.dbFilePath)
-        queue.inTransaction { db, rollback in
+        queue.inTransaction { db, _ in
             completion(ZKFMDBConvert<T>.query(db, sql: sql, values: values))
         }
     }

@@ -35,8 +35,7 @@ public extension FileManager {
             return size
         }
         /// 获取文件夹大小
-        public static func folderSizeAtPath(_ path: String) -> Double
-        {
+        public static func folderSizeAtPath(_ path: String) -> Double {
             var size: Double = 0
             guard self.exists(path) else {
                 return size

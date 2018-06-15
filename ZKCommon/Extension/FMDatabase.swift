@@ -11,7 +11,7 @@ import FMDB
 public extension FMDatabase {
     public final class zk {
         public static var dbFilePath = ""
-        
+
         public static func manager(_ dbFilePath: String? = nil) -> FMDatabase {
             let db = FMDatabase(path: dbFilePath ?? self.dbFilePath)
             let isOpen = db.open()
