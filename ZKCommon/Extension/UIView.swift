@@ -8,42 +8,45 @@
 
 import UIKit
 
-/// UIView
 public extension UIView {
-    /// 视图 width 值
+    /// ZK: width
     public var width: CGFloat {
         get {
-            return self.frame.size.width
+            return frame.width
+        } set {
+            frame.size.width = newValue
         }
     }
-    /// 视图 height 值
+    /// ZK: height
     public var height: CGFloat {
         get {
-            return self.frame.size.height
+            return frame.height
+        } set {
+            frame.size.height = newValue
         }
     }
-    /// 视图 x 值
+    /// ZK: x
     public var x: CGFloat {
         get {
-            return self.frame.origin.x
+            return frame.origin.x
+        } set {
+            frame.origin.x = newValue
         }
     }
-    /// 视图 y 值
+    /// ZK: y
     public var y: CGFloat {
         get {
-            return self.frame.origin.y
+            return frame.origin.y
+        } set {
+            frame.origin.y = y
         }
     }
-    /// 视图右侧 y 值
+    /// ZK: bottomY = y + height
     public var bottomY: CGFloat {
-        get {
-            return self.frame.size.height + self.frame.origin.y
-        }
+        return height + y
     }
-    /// 视图右侧 x 值
+    /// ZK: rightX = width + x
     public var rightX: CGFloat {
-        get {
-            return self.frame.size.width + self.frame.origin.x
-        }
+        return width + x
     }
 }

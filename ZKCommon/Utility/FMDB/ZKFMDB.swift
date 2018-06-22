@@ -11,7 +11,7 @@ import Then
 import ObjectMapper
 import CleanroomLogger
 
-/// 线程安全
+/// ZK: 线程安全
 public final class ZKFMDBQueue {
     public static func scalar(
         _ sql: String,
@@ -89,7 +89,7 @@ public final class ZKFMDB {
         }
     }
 }
-/// 线程安全查询
+/// ZK: 线程安全查询
 public final class ZKFMDBQueryQueue<T> where T: ZKModel {
     public static func executeQuery(
         _ sql: String,

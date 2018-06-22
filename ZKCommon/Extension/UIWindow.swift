@@ -8,10 +8,9 @@
 
 import UIKit
 
-/// UIWindow
 public extension UIWindow {
     public final class zk {
-        /// 获得最前 Window
+        /// ZK: 最前 Window
         public static var frontWindow: UIWindow? {
             get {
                 let window = UIApplication.shared.windows.reversed().first(where: {

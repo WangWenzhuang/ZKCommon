@@ -9,7 +9,7 @@
 import UIKit
 
 open class DynamicBlurView: UIView {
-    open override class var layerClass : AnyClass {
+    open override class var layerClass: AnyClass {
         return BlurLayer.self
     }
 

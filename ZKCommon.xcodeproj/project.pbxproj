@@ -22,6 +22,7 @@
 		A03AE1C220CFD8480054F66F /* ZKFMDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03AE1C120CFD8480054F66F /* ZKFMDB.swift */; };
 		A03C3E8A1F04D80400E3EDC7 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03C3E891F04D80400E3EDC7 /* FileManager.swift */; };
 		A05770911F6A916E00CB7DE1 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05770901F6A916E00CB7DE1 /* UIViewController.swift */; };
+		A063FFF320DCDB52004CB5E5 /* UIScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A063FFF220DCDB52004CB5E5 /* UIScreen.swift */; };
 		A099EC4F1F0E31A700DA08B4 /* ZKAutoUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A099EC4E1F0E31A700DA08B4 /* ZKAutoUpdate.swift */; };
 		A0C3DC7D20A0234C00431E86 /* FMDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C3DC7C20A0234C00431E86 /* FMDatabase.swift */; };
 		A0C3DC7F20A0239000431E86 /* PopupDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C3DC7E20A0239000431E86 /* PopupDialog.swift */; };
@@ -45,6 +46,7 @@
 		A03AE1C120CFD8480054F66F /* ZKFMDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZKFMDB.swift; sourceTree = "<group>"; };
 		A03C3E891F04D80400E3EDC7 /* FileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 		A05770901F6A916E00CB7DE1 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		A063FFF220DCDB52004CB5E5 /* UIScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScreen.swift; sourceTree = "<group>"; };
 		A099EC4E1F0E31A700DA08B4 /* ZKAutoUpdate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZKAutoUpdate.swift; sourceTree = "<group>"; };
 		A0C3DC7C20A0234C00431E86 /* FMDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMDatabase.swift; sourceTree = "<group>"; };
 		A0C3DC7E20A0239000431E86 /* PopupDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupDialog.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				A005C90A1EB895E700FEE6F1 /* UIColor.swift */,
 				A005C90B1EB895E700FEE6F1 /* UIImage.swift */,
 				A005C90E1EB895E700FEE6F1 /* UIWindow.swift */,
+				A063FFF220DCDB52004CB5E5 /* UIScreen.swift */,
 				A03C3E891F04D80400E3EDC7 /* FileManager.swift */,
 				A0C3DC7C20A0234C00431E86 /* FMDatabase.swift */,
 				A0C3DC7E20A0239000431E86 /* PopupDialog.swift */,
@@ -262,6 +265,7 @@
 				A005C9101EB895E700FEE6F1 /* Date.swift in Sources */,
 				A0C3DC7D20A0234C00431E86 /* FMDatabase.swift in Sources */,
 				A005C91C1EB89C3500FEE6F1 /* ZKDevice.swift in Sources */,
+				A063FFF320DCDB52004CB5E5 /* UIScreen.swift in Sources */,
 				A03AE1C220CFD8480054F66F /* ZKFMDB.swift in Sources */,
 				A005C9171EB895E700FEE6F1 /* UIWindow.swift in Sources */,
 				A03AE1C020CFD73E0054F66F /* ZKModel.swift in Sources */,

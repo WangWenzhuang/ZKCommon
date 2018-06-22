@@ -26,18 +26,17 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-
 import Foundation
 
 /// MapContext is available for developers who wish to pass information around during the mapping process.
 public protocol MapContext {
-	
+
 }
 
 /// A class used for holding mapping data
 public final class Map {
 	public let mappingType: MappingType
-	
+
 	public internal(set) var JSON: [String: Any] = [:]
 	public internal(set) var isKeyPresent = false
 	public internal(set) var currentValue: Any?
@@ -46,59 +45,59 @@ public final class Map {
 	public internal(set) var nestedKeyDelimiter: String = "."
 	public var context: MapContext?
 	public var shouldIncludeNilValues = false  /// If this is set to true, toJSON output will include null values for any variables that are not set.
-	
+
 	public let toObject: Bool // indicates whether the mapping is being applied to an existing object
-	
+
 	public init(mappingType: MappingType, JSON: [String: Any], toObject: Bool = false, context: MapContext? = nil, shouldIncludeNilValues: Bool = false) {
-		
+
 		self.mappingType = mappingType
 		self.JSON = JSON
 		self.toObject = toObject
 		self.context = context
 		self.shouldIncludeNilValues = shouldIncludeNilValues
 	}
-	
+
 	/// Sets the current mapper value and key.
 	/// The Key paramater can be a period separated string (ex. "distance.value") to access sub objects.
 	public subscript(key: String) -> Map {
 		// save key and value associated to it
 		return self.subscript(key: key)
 	}
-	
+
 	public subscript(key: String, delimiter delimiter: String) -> Map {
 		return self.subscript(key: key, delimiter: delimiter)
 	}
-	
+
 	public subscript(key: String, nested nested: Bool) -> Map {
 		return self.subscript(key: key, nested: nested)
 	}
-	
+
 	public subscript(key: String, nested nested: Bool, delimiter delimiter: String) -> Map {
 		return self.subscript(key: key, nested: nested, delimiter: delimiter)
 	}
-	
+
 	public subscript(key: String, ignoreNil ignoreNil: Bool) -> Map {
 		return self.subscript(key: key, ignoreNil: ignoreNil)
 	}
-	
+
 	public subscript(key: String, delimiter delimiter: String, ignoreNil ignoreNil: Bool) -> Map {
 		return self.subscript(key: key, delimiter: delimiter, ignoreNil: ignoreNil)
 	}
-	
+
 	public subscript(key: String, nested nested: Bool, ignoreNil ignoreNil: Bool) -> Map {
 		return self.subscript(key: key, nested: nested, ignoreNil: ignoreNil)
 	}
-	
+
 	public subscript(key: String, nested nested: Bool?, delimiter delimiter: String, ignoreNil ignoreNil: Bool) -> Map {
 		return self.subscript(key: key, nested: nested, delimiter: delimiter, ignoreNil: ignoreNil)
 	}
-	
+
 	private func `subscript`(key: String, nested: Bool? = nil, delimiter: String = ".", ignoreNil: Bool = false) -> Map {
 		// save key and value associated to it
 		currentKey = key
 		keyIsNested = nested ?? key.contains(delimiter)
 		nestedKeyDelimiter = delimiter
-		
+
 		if mappingType == .fromJSON {
 			// check if a value exists for the current key
 			// do this pre-check for performance reasons
@@ -111,19 +110,19 @@ public final class Map {
 				isKeyPresent = isNSNull ? true : object != nil
 				currentValue = isNSNull ? nil : object
 			}
-			
+
 			// update isKeyPresent if ignoreNil is true
 			if ignoreNil && currentValue == nil {
 				isKeyPresent = false
 			}
 		}
-		
+
 		return self
 	}
-	
+
 	public func value<T>() -> T? {
 		let value = currentValue as? T
-		
+
 		// Swift 4.1 breaks Float casting from `NSNumber`. So Added extra checks for `Flaot` `[Float]` and `[String:Float]`
 		if value == nil && T.self == Float.self {
 			if let v = currentValue as? NSNumber {
@@ -131,11 +130,11 @@ public final class Map {
 			}
 		} else if value == nil && T.self == [Float].self {
 			if let v = currentValue as? [Double] {
-				return v.flatMap{ Float($0) } as? T
+				return v.flatMap { Float($0) } as? T
 			}
-		} else if value == nil && T.self == [String:Float].self {
-			if let v = currentValue as? [String:Double] {
-				return v.mapValues{ Float($0) } as? T
+		} else if value == nil && T.self == [String: Float].self {
+			if let v = currentValue as? [String: Double] {
+				return v.mapValues { Float($0) } as? T
 			}
 		}
 		return value
@@ -148,7 +147,7 @@ private func valueFor(_ keyPathComponents: ArraySlice<String>, dictionary: [Stri
 	if keyPathComponents.isEmpty {
 		return (false, nil)
 	}
-	
+
 	if let keyPath = keyPathComponents.first {
 		let isTail = keyPathComponents.count == 1
 		let object = dictionary[keyPath]
@@ -164,28 +163,28 @@ private func valueFor(_ keyPathComponents: ArraySlice<String>, dictionary: [Stri
 			return (isTail && object != nil, object)
 		}
 	}
-	
+
 	return (false, nil)
 }
 
 /// Fetch value from JSON Array, loop through keyPathComponents them until we reach the desired object
 private func valueFor(_ keyPathComponents: ArraySlice<String>, array: [Any]) -> (Bool, Any?) {
 	// Implement it as a tail recursive function.
-	
+
 	if keyPathComponents.isEmpty {
 		return (false, nil)
 	}
-	
+
 	//Try to convert keypath to Int as index
 	if let keyPath = keyPathComponents.first,
-		let index = Int(keyPath) , index >= 0 && index < array.count {
-		
+		let index = Int(keyPath), index >= 0 && index < array.count {
+
 		let isTail = keyPathComponents.count == 1
 		let object = array[index]
-		
+
 		if object is NSNull {
 			return (isTail, nil)
-		} else if keyPathComponents.count > 1, let array = object as? [Any]  {
+		} else if keyPathComponents.count > 1, let array = object as? [Any] {
 			let tail = keyPathComponents.dropFirst()
 			return valueFor(tail, array: array)
 		} else if  keyPathComponents.count > 1, let dict = object as? [String: Any] {
@@ -195,6 +194,6 @@ private func valueFor(_ keyPathComponents: ArraySlice<String>, array: [Any]) -> 
 			return (isTail, object)
 		}
 	}
-	
+
 	return (false, nil)
 }

@@ -33,11 +33,11 @@ final public class PopupDialog: UIViewController {
 
     /// First init flag
     fileprivate var initialized = false
-    
+
     /// StatusBar display related
     fileprivate let hideStatusBar: Bool
     fileprivate var statusBarShouldBeHidden: Bool = false
-    
+
     /// Width for iPad displays
     fileprivate let preferredWidth: CGFloat
 
@@ -153,7 +153,7 @@ final public class PopupDialog: UIViewController {
         // Define presentation styles
         transitioningDelegate = presentationManager
         modalPresentationStyle = .custom
-        
+
         // StatusBar setup
         modalPresentationCapturesStatusBarAppearance = true
 
@@ -194,10 +194,10 @@ final public class PopupDialog: UIViewController {
         appendButtons()
         initialized = true
     }
-    
+
     public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+
         statusBarShouldBeHidden = hideStatusBar
         UIView.animate(withDuration: 0.15) {
             self.setNeedsStatusBarAppearanceUpdate()
@@ -240,14 +240,14 @@ final public class PopupDialog: UIViewController {
      to the placeholder stack view
      */
     fileprivate func appendButtons() {
-        
+
         // Add action to buttons
         let stackView = popupContainerView.stackView
         let buttonStackView = popupContainerView.buttonStackView
         if buttons.isEmpty {
             stackView.removeArrangedSubview(popupContainerView.buttonStackView)
         }
-        
+
         for (index, button) in buttons.enumerated() {
             button.needsLeftSeparator = buttonStackView.axis == .horizontal && index > 0
             buttonStackView.addArrangedSubview(button)
@@ -289,13 +289,13 @@ final public class PopupDialog: UIViewController {
         let button = buttons[index]
         button.buttonAction?()
     }
-    
+
     // MARK: - StatusBar display related
-    
+
     public override var prefersStatusBarHidden: Bool {
         return statusBarShouldBeHidden
     }
-    
+
     public override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
         return .slide
     }
@@ -326,7 +326,7 @@ extension PopupDialog {
 // MARK: - Shake
 
 extension PopupDialog {
-    
+
     /// Performs a shake animation on the dialog
     @objc public func shake() {
         popupContainerView.pv_shake()

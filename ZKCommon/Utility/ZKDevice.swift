@@ -8,7 +8,7 @@
 
 import UIKit
 
-/// ZKDevice
+/// ZK: ZKDevice
 public enum ZKiPhoneModel: Int {
     case iPhone4
     case iPhone5
@@ -16,13 +16,13 @@ public enum ZKiPhoneModel: Int {
     case iPhone67Plus
 }
 
-/// 状态栏高度
+/// ZK: 状态栏高度
 public var ZKStatusBarHeight: CGFloat {
     get {
         return UIApplication.shared.statusBarFrame.size.height
     }
 }
-/// 设备型号
+/// ZK: 设备型号
 public var ZKiPhoneModels: ZKiPhoneModel {
     get {
         let screenHeight = UIScreen.main.bounds.size.height

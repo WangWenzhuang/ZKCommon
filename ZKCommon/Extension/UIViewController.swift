@@ -9,57 +9,47 @@
 import UIKit
 
 public extension UIViewController {
-    /// 导航栏高度
-    public var navBarHeight: CGFloat {
-        get {
-            return self.navigationController?.navigationBar.frame.size.height ?? 0
-        }
+    /// ZK: 导航栏高度
+    public var navigationBarHeight: CGFloat {
+        return navigationController?.navigationBar.frame.size.height ?? 0
     }
-    /// 导航栏和状态栏高度
-    public var navBarAndStatusBarHeight: CGFloat {
-        get {
-            return self.navBarHeight + ZKStatusBarHeight
-        }
+    /// ZK: 导航栏和状态栏高度
+    public var navigationBarAndStatusBarHeight: CGFloat {
+        return navigationBarHeight + UIApplication.shared.statusBarFrame.size.height
     }
-    /// tabBar 高度
+    /// ZK: tabBar 高度
     public var tabBarHeight: CGFloat {
-        get {
-            return self.tabBarController?.tabBar.height ?? 0
-        }
+        return tabBarController?.tabBar.height ?? 0
     }
-    /// view 的 widht
+    /// ZK: view 的 widht
     public var width: CGFloat {
-        get {
-            return self.view.width
-        }
+        return view.width
     }
-    /// view 的 height
     public var height: CGFloat {
-        get {
-            return self.view.height
-        }
+        return view.height
     }
-    public func push(_ viewController: UIViewController) {
-        self.navigationController?.pushViewController(viewController, animated: true)
+    public func push(_ viewController: UIViewController, animated: Bool = true) {
+        navigationController?.pushViewController(viewController, animated: animated)
     }
-
-    public func pop() {
-        self.navigationController?.popViewController(animated: true)
+    public func pop(animated: Bool = true) {
+        navigationController?.popViewController(animated: animated)
     }
-
-    public func popToRoot() {
-        self.navigationController?.popToRootViewController(animated: true)
+    public func popToRoot(animated: Bool = true) {
+        navigationController?.popToRootViewController(animated: animated)
     }
-
-    public func popToViewController(_ viewController: UIViewController) {
-        self.navigationController?.popToViewController(viewController, animated: true)
+    public func popToViewController(_ viewController: UIViewController, animated: Bool = true) {
+        navigationController?.popToViewController(viewController, animated: animated)
     }
-
-    public func present(_ viewControllerToPresent: UIViewController) {
-        self.present(viewControllerToPresent, animated: true)
+    public func present(_ viewControllerToPresent: UIViewController, _ completion: (() -> Swift.Void)? = nil) {
+        present(viewControllerToPresent, animated: true, completion: completion)
     }
-
-    public func dismiss() {
-        self.dismiss(animated: true, completion: nil)
+    public func present(_ viewControllerToPresent: UIViewController, animated: Bool) {
+        present(viewControllerToPresent, animated: animated, completion: nil)
+    }
+    public func dismiss(_ completion: (() -> Swift.Void)? = nil) {
+        dismiss(animated: true, completion: completion)
+    }
+    public func dismiss(animated: Bool) {
+        dismiss(animated: animated, completion: nil)
     }
 }

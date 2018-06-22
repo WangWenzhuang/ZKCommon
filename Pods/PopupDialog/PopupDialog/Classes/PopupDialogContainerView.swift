@@ -109,7 +109,7 @@ final public class PopupDialogContainerView: UIView {
         stackView.spacing = 0
         return stackView
     }()
-    
+
     // The preferred width for iPads
     fileprivate let preferredWidth: CGFloat
 
@@ -119,7 +119,7 @@ final public class PopupDialogContainerView: UIView {
     internal var centerYConstraint: NSLayoutConstraint?
 
     // MARK: - Initializers
-    
+
     internal init(frame: CGRect, preferredWidth: CGFloat) {
         self.preferredWidth = preferredWidth
         super.init(frame: frame)
@@ -152,11 +152,11 @@ final public class PopupDialogContainerView: UIView {
         }
         constraints += [NSLayoutConstraint(item: shadowContainer, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0)]
         centerYConstraint = NSLayoutConstraint(item: shadowContainer, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1, constant: 0)
-        
+
         if let centerYConstraint = centerYConstraint {
             constraints.append(centerYConstraint)
         }
-        
+
         // Container constraints
         constraints += NSLayoutConstraint.constraints(withVisualFormat: "H:|[container]|", options: [], metrics: nil, views: views)
         constraints += NSLayoutConstraint.constraints(withVisualFormat: "V:|[container]|", options: [], metrics: nil, views: views)
