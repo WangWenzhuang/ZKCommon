@@ -17,13 +17,11 @@
 		A005C9181EB895E700FEE6F1 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = A005C90F1EB895E700FEE6F1 /* URL.swift */; };
 		A005C91C1EB89C3500FEE6F1 /* ZKDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = A005C91B1EB89C3500FEE6F1 /* ZKDevice.swift */; };
 		A008BB9920C126960060FC7E /* UUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = A008BB9820C126960060FC7E /* UUID.swift */; };
-		A008BB9D20C12A5D0060FC7E /* ZKJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = A008BB9C20C12A5D0060FC7E /* ZKJson.swift */; };
 		A03AE1C020CFD73E0054F66F /* ZKModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03AE1BF20CFD73E0054F66F /* ZKModel.swift */; };
 		A03AE1C220CFD8480054F66F /* ZKFMDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03AE1C120CFD8480054F66F /* ZKFMDB.swift */; };
 		A03C3E8A1F04D80400E3EDC7 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03C3E891F04D80400E3EDC7 /* FileManager.swift */; };
 		A05770911F6A916E00CB7DE1 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05770901F6A916E00CB7DE1 /* UIViewController.swift */; };
 		A063FFF320DCDB52004CB5E5 /* UIScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A063FFF220DCDB52004CB5E5 /* UIScreen.swift */; };
-		A099EC4F1F0E31A700DA08B4 /* ZKAutoUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A099EC4E1F0E31A700DA08B4 /* ZKAutoUpdate.swift */; };
 		A0C3DC7D20A0234C00431E86 /* FMDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C3DC7C20A0234C00431E86 /* FMDatabase.swift */; };
 		A0C3DC7F20A0239000431E86 /* PopupDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C3DC7E20A0239000431E86 /* PopupDialog.swift */; };
 /* End PBXBuildFile section */
@@ -41,13 +39,11 @@
 		A005C90F1EB895E700FEE6F1 /* URL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		A005C91B1EB89C3500FEE6F1 /* ZKDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZKDevice.swift; sourceTree = "<group>"; };
 		A008BB9820C126960060FC7E /* UUID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UUID.swift; sourceTree = "<group>"; };
-		A008BB9C20C12A5D0060FC7E /* ZKJson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZKJson.swift; sourceTree = "<group>"; };
 		A03AE1BF20CFD73E0054F66F /* ZKModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZKModel.swift; sourceTree = "<group>"; };
 		A03AE1C120CFD8480054F66F /* ZKFMDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZKFMDB.swift; sourceTree = "<group>"; };
 		A03C3E891F04D80400E3EDC7 /* FileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 		A05770901F6A916E00CB7DE1 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		A063FFF220DCDB52004CB5E5 /* UIScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScreen.swift; sourceTree = "<group>"; };
-		A099EC4E1F0E31A700DA08B4 /* ZKAutoUpdate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZKAutoUpdate.swift; sourceTree = "<group>"; };
 		A0C3DC7C20A0234C00431E86 /* FMDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMDatabase.swift; sourceTree = "<group>"; };
 		A0C3DC7E20A0239000431E86 /* PopupDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupDialog.swift; sourceTree = "<group>"; };
 		DB9B6A3728A6E1C258369163 /* Pods_ZKCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZKCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,9 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				A03AE1BE20CFD72D0054F66F /* FMDB */,
-				A008BB9C20C12A5D0060FC7E /* ZKJson.swift */,
 				A005C91B1EB89C3500FEE6F1 /* ZKDevice.swift */,
-				A099EC4E1F0E31A700DA08B4 /* ZKAutoUpdate.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -254,7 +248,6 @@
 			files = (
 				A005C9121EB895E700FEE6F1 /* String.swift in Sources */,
 				A005C9141EB895E700FEE6F1 /* UIImage.swift in Sources */,
-				A099EC4F1F0E31A700DA08B4 /* ZKAutoUpdate.swift in Sources */,
 				A005C9181EB895E700FEE6F1 /* URL.swift in Sources */,
 				A0C3DC7F20A0239000431E86 /* PopupDialog.swift in Sources */,
 				A008BB9920C126960060FC7E /* UUID.swift in Sources */,
@@ -269,7 +262,6 @@
 				A03AE1C220CFD8480054F66F /* ZKFMDB.swift in Sources */,
 				A005C9171EB895E700FEE6F1 /* UIWindow.swift in Sources */,
 				A03AE1C020CFD73E0054F66F /* ZKModel.swift in Sources */,
-				A008BB9D20C12A5D0060FC7E /* ZKJson.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,7 +404,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -434,7 +426,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};

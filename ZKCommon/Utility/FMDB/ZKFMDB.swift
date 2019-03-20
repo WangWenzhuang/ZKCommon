@@ -9,7 +9,6 @@
 import FMDB
 import Then
 import ObjectMapper
-import CleanroomLogger
 
 /// ZK: 线程安全
 public final class ZKFMDBQueue {
@@ -19,7 +18,7 @@ public final class ZKFMDBQueue {
         completion: ((_ result: Int) -> Void)
     ) {
         let queue = FMDatabaseQueue(path: FMDatabase.zk.dbFilePath)
-        queue.inTransaction { db, _ in
+        queue?.inTransaction { db, _ in
             var result: Int = 0
             do {
                 let table = try db.executeQuery(sql, values: values)
@@ -27,8 +26,7 @@ public final class ZKFMDBQueue {
                     result = Int(table.int(forColumnIndex: 0))
                 }
             } catch let error {
-
-                Log.error?.value(error)
+                print("ZKCommon -> \(error)")
             }
             completion(result)
         }
@@ -36,19 +34,19 @@ public final class ZKFMDBQueue {
 
     public static func executNoQuery(_ sql: String, values: [Any]? = nil) {
         let queue = FMDatabaseQueue(path: FMDatabase.zk.dbFilePath)
-        queue.inTransaction { db, rollback in
+        queue?.inTransaction { db, rollback in
             do {
                 try db.executeUpdate(sql, values: values)
             } catch {
                 rollback.pointee = true
-                Log.error?.value(error)
+                print("ZKCommon -> \(error)")
             }
         }
     }
 
     public static func executeStatements(_ sql: String) {
         let queue = FMDatabaseQueue(path: FMDatabase.zk.dbFilePath)
-        queue.inTransaction { db, _ in
+        queue?.inTransaction { db, _ in
             db.executeStatements(sql)
         }
     }
@@ -64,7 +62,7 @@ public final class ZKFMDB {
                     result = Int(table.int(forColumnIndex: 0))
                 }
             } catch let error {
-                Log.error?.value(error)
+                print("ZKCommon -> \(error)")
             }
             $0.close()
         }
@@ -76,7 +74,7 @@ public final class ZKFMDB {
             do {
                 try $0.executeUpdate(sql, values: values)
             } catch let error {
-                Log.error?.value(error)
+                print("ZKCommon -> \(error)")
             }
             $0.close()
         }
@@ -97,7 +95,7 @@ public final class ZKFMDBQueryQueue<T> where T: ZKModel {
         completion: ((_ list: [T]) -> Void)
     ) {
         let queue = FMDatabaseQueue(path: FMDatabase.zk.dbFilePath)
-        queue.inTransaction { db, _ in
+        queue?.inTransaction { db, _ in
             completion(ZKFMDBConvert<T>.query(db, sql: sql, values: values))
         }
     }
@@ -137,7 +135,7 @@ fileprivate final class ZKFMDBConvert<T> where T: ZKModel {
                 }
             }
         } catch let error {
-            Log.error?.value(error)
+            print("ZKCommon -> \(error)")
         }
         db.close()
         return list

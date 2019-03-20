@@ -3,8 +3,26 @@
 //  ObjectMapper
 //
 //  Created by Vitaliy Kuzmenko on 10/10/16.
-//  Copyright © 2016 hearst. All rights reserved.
 //
+//  Copyright (c) 2014-2018 Tristan Himmelman
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in
+//  all copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+//  THE SOFTWARE.
 
 #if os(iOS) || os(tvOS) || os(watchOS)
 import UIKit
@@ -14,24 +32,24 @@ import Cocoa
 
 #if os(iOS) || os(tvOS) || os(watchOS) || os(macOS)
 open class HexColorTransform: TransformType {
-
+	
 	#if os(iOS) || os(tvOS) || os(watchOS)
 	public typealias Object = UIColor
 	#else
 	public typealias Object = NSColor
 	#endif
-
+	
 	public typealias JSON = String
-
+	
 	var prefix: Bool = false
-
+	
 	var alpha: Bool = false
-
+	
 	public init(prefixToJSON: Bool = false, alphaToJSON: Bool = false) {
 		alpha = alphaToJSON
 		prefix = prefixToJSON
 	}
-
+	
 	open func transformFromJSON(_ value: Any?) -> Object? {
 		if let rgba = value as? String {
 			if rgba.hasPrefix("#") {
@@ -44,14 +62,14 @@ open class HexColorTransform: TransformType {
 		}
 		return nil
 	}
-
+	
 	open func transformToJSON(_ value: Object?) -> JSON? {
 		if let value = value {
 			return hexString(color: value)
 		}
 		return nil
 	}
-
+	
 	fileprivate func hexString(color: Object) -> String {
 		let comps = color.cgColor.components!
 		let compsCount = color.cgColor.numberOfComponents
@@ -73,19 +91,19 @@ open class HexColorTransform: TransformType {
 			hexString = "#"
 		}
 		hexString += String(format: "%02X%02X%02X", r, g, b)
-
+		
 		if alpha {
 			hexString += String(format: "%02X", a)
 		}
 		return hexString
 	}
-
+	
 	fileprivate func getColor(hex: String) -> Object? {
 		var red: CGFloat   = 0.0
 		var green: CGFloat = 0.0
 		var blue: CGFloat  = 0.0
 		var alpha: CGFloat = 1.0
-
+		
 		let scanner = Scanner(string: hex)
 		var hexValue: CUnsignedLongLong = 0
 		if scanner.scanHexInt64(&hexValue) {
@@ -119,7 +137,7 @@ open class HexColorTransform: TransformType {
 		#if os(iOS) || os(tvOS) || os(watchOS)
 			return UIColor(red: red, green: green, blue: blue, alpha: alpha)
 		#else
-			return NSColor(calibratedRed: red, green: green, blue: blue, alpha: alpha)
+			return NSColor(red: red, green: green, blue: blue, alpha: alpha)
 		#endif
 	}
 }

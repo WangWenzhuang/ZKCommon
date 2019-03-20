@@ -14,11 +14,12 @@ public enum TrackingMode: CustomStringConvertible {
     public var description: String {
         switch self {
         case .tracking:
-            return RunLoopMode.UITrackingRunLoopMode.rawValue
+            return RunLoop.Mode.tracking.rawValue
         case .common:
-            return RunLoopMode.commonModes.rawValue
+            return RunLoop.Mode.common.rawValue
         case .none:
             return ""
         }
     }
 }
+

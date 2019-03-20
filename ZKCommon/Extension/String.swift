@@ -34,7 +34,7 @@ public extension String {
         return conten.boundingRect(
             with: CGSize(width: width, height: UIScreen.main.bounds.size.height),
             options: .usesLineFragmentOrigin,
-            attributes: [ NSAttributedStringKey.font: font ],
+            attributes: [ NSAttributedString.Key.font: font ],
             context: nil
         ).size
     }

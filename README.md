@@ -1,4 +1,4 @@
-![(logo)](https://raw.githubusercontent.com/WangWenzhuang/ZKStatusBarNotification/master/image/logo.png)
+![(logo)](https://raw.githubusercontent.com/WangWenzhuang/ZKProgressHUD/master/Demo/image%402x.png)
 
 # ZKCommon
 
