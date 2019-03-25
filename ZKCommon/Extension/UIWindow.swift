@@ -21,5 +21,24 @@ public extension UIWindow {
                 return window
             }
         }
+        
+        /// ZK: 最前 Window 活动的控制器
+        public static var visibleViewController: UIViewController? {
+            return visibleViewControllerFrom(frontWindow?.rootViewController)
+        }
+        
+        static func visibleViewControllerFrom(_ viewController: UIViewController?) -> UIViewController? {
+            if let navigationController = viewController as? UINavigationController {
+                return visibleViewControllerFrom(navigationController.visibleViewController)
+            } else if let tabBarController = viewController as? UITabBarController {
+                return visibleViewControllerFrom(tabBarController.selectedViewController)
+            } else {
+                if let presentedViewController = viewController?.presentedViewController {
+                    return visibleViewControllerFrom(presentedViewController)
+                } else {
+                    return viewController
+                }
+            }
+        }
     }
 }
