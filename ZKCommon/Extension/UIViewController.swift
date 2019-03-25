@@ -23,10 +23,18 @@ public extension UIViewController {
     }
     /// ZK: view 的 widht
     public var width: CGFloat {
-        return view.width
+        if supportedInterfaceOrientations == .portrait || supportedInterfaceOrientations == .portraitUpsideDown {
+            return view.width < view.height ? view.width : view.height
+        } else {
+            return view.width < view.height ? view.height : view.width
+        }
     }
     public var height: CGFloat {
-        return view.height
+        if supportedInterfaceOrientations == .portrait || supportedInterfaceOrientations == .portraitUpsideDown {
+            return view.width < view.height ? view.height : view.width
+        } else {
+            return view.width < view.height ? view.width : view.height
+        }
     }
     public func push(_ viewController: UIViewController, animated: Bool = true) {
         navigationController?.pushViewController(viewController, animated: animated)
