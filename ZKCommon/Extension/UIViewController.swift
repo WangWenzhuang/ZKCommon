@@ -23,17 +23,17 @@ public extension UIViewController {
     }
     /// ZK: view 的 widht
     public var width: CGFloat {
-        if supportedInterfaceOrientations == .portrait || supportedInterfaceOrientations == .portraitUpsideDown {
-            return view.width < view.height ? view.width : view.height
-        } else {
+        if supportedInterfaceOrientations == .landscape {
             return view.width < view.height ? view.height : view.width
+        } else {
+            return view.width < view.height ? view.width : view.height
         }
     }
     public var height: CGFloat {
-        if supportedInterfaceOrientations == .portrait || supportedInterfaceOrientations == .portraitUpsideDown {
-            return view.width < view.height ? view.height : view.width
-        } else {
+        if supportedInterfaceOrientations == .landscape {
             return view.width < view.height ? view.width : view.height
+        } else {
+            return view.width < view.height ? view.height : view.width
         }
     }
     public func push(_ viewController: UIViewController, animated: Bool = true) {
