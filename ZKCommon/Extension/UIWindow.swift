@@ -12,14 +12,11 @@ public extension UIWindow {
     final class zk {
         /// ZK: 最前 Window
         public static var frontWindow: UIWindow? {
-            get {
-                let window = UIApplication.shared.windows.reversed().first(where: {
-                    $0.screen == UIScreen.main &&
-                        !$0.isHidden && $0.alpha > 0 &&
-                        $0.windowLevel == UIWindow.Level.normal
-                })
-                return window
-            }
+            return UIApplication.shared.windows.reversed().first(where: {
+                $0.screen == UIScreen.main &&
+                    !$0.isHidden && $0.alpha > 0 &&
+                    $0.windowLevel == UIWindow.Level.normal
+            })
         }
         
         /// ZK: 最前 Window 活动的控制器

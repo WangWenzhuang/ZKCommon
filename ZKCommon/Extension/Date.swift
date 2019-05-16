@@ -12,11 +12,9 @@ public extension Date {
     final class zk {
         /// ZK: 当前时间字符串
         public static var nowString: String {
-            get {
-                return DateFormatter().then {
+            return DateFormatter().then {
                     $0.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
                 }.string(from: Date())
-            }
         }
         /// ZK: 格式化时间字符串
         ///

@@ -12,9 +12,7 @@ public extension UUID {
     final class zk {
         /// ZK: 去掉“-”的 uuid 字符串
         public static var id: String {
-            get {
-                return NSString(string: UUID().uuidString).replacingOccurrences(of: "-", with: "")
-            }
+            return NSString(string: UUID().uuidString).replacingOccurrences(of: "-", with: "")
         }
     }
 }

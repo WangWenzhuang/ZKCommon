@@ -18,9 +18,7 @@ public enum ZKiPhoneModel: Int {
 
 /// ZK: 状态栏高度
 public var ZKStatusBarHeight: CGFloat {
-    get {
-        return UIApplication.shared.statusBarFrame.size.height
-    }
+    return UIApplication.shared.statusBarFrame.size.height
 }
 /// ZK: 设备型号
 public var ZKiPhoneModels: ZKiPhoneModel {
