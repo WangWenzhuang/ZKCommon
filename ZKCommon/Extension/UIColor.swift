@@ -9,7 +9,7 @@
 import UIKit
 
 public extension UIColor {
-    public final class zk {
+    final class zk {
         /// ZK: 根据 rgb 创建颜色
         ///
         /// - Parameters:

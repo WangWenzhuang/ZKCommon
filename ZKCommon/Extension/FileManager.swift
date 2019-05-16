@@ -9,7 +9,7 @@
 import UIKit
 
 public extension FileManager {
-    public final class zk {
+    final class zk {
         /// ZK: 判断文件或文件夹是否存在
         ///
         /// - Parameters:

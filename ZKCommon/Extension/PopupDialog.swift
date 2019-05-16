@@ -11,7 +11,7 @@ import PopupDialog
 public extension PopupDialog {
     typealias block = (() -> Void)
 
-    public final class zk {
+    final class zk {
         public static func show(_ title: String = "提示", message: String) {
             self.show(title, message: message, completion: nil)
         }

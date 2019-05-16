@@ -10,11 +10,11 @@ import UIKit
 
 public extension UIScreen {
     /// ZK: width
-    public static var width: CGFloat {
+    static var width: CGFloat {
         return UIScreen.main.bounds.size.width
     }
     /// ZK: height
-    public static var height: CGFloat {
+    static var height: CGFloat {
         return UIScreen.main.bounds.size.height
     }
 }

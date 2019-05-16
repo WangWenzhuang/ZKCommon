@@ -9,7 +9,7 @@
 import UIKit
 
 public extension Date {
-    public final class zk {
+    final class zk {
         /// ZK: 当前时间字符串
         public static var nowString: String {
             get {

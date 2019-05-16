@@ -9,7 +9,7 @@
 import FMDB
 
 public extension FMDatabase {
-    public final class zk {
+    final class zk {
         /// 数据库路径
         public static var dbFilePath = ""
         /// 获取一个数据库实例，已打开

@@ -10,7 +10,7 @@ import UIKit
 
 public extension UIView {
     /// ZK: width
-    public var width: CGFloat {
+    var width: CGFloat {
         get {
             return frame.width
         } set {
@@ -18,7 +18,7 @@ public extension UIView {
         }
     }
     /// ZK: height
-    public var height: CGFloat {
+    var height: CGFloat {
         get {
             return frame.height
         } set {
@@ -26,7 +26,7 @@ public extension UIView {
         }
     }
     /// ZK: x
-    public var x: CGFloat {
+    var x: CGFloat {
         get {
             return frame.origin.x
         } set {
@@ -34,7 +34,7 @@ public extension UIView {
         }
     }
     /// ZK: y
-    public var y: CGFloat {
+    var y: CGFloat {
         get {
             return frame.origin.y
         } set {
@@ -42,11 +42,11 @@ public extension UIView {
         }
     }
     /// ZK: bottomY = y + height
-    public var bottomY: CGFloat {
+    var bottomY: CGFloat {
         return height + y
     }
     /// ZK: rightX = width + x
-    public var rightX: CGFloat {
+    var rightX: CGFloat {
         return width + x
     }
 }

@@ -15,7 +15,7 @@ public extension UIImage {
     /// - Parameters:
     ///   - size: 压缩到此大小
     /// - Returns: Data
-    public func compression(_ size: Int) -> Data {
+    func compression(_ size: Int) -> Data {
         //先判断当前质量是否满足要求，不满足再进行压缩
         var finallImageData = self.jpegData(compressionQuality: 1.0)
         let sizeOrigin      = finallImageData?.count

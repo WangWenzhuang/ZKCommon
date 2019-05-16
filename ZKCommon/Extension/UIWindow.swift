@@ -9,7 +9,7 @@
 import UIKit
 
 public extension UIWindow {
-    public final class zk {
+    final class zk {
         /// ZK: 最前 Window
         public static var frontWindow: UIWindow? {
             get {
