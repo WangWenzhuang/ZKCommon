@@ -35,3 +35,39 @@ public var ZKiPhoneModels: ZKiPhoneModel {
         }
     }
 }
+
+public extension UIDevice {
+    final class zk {
+        public static var safeAreaBottom: CGFloat {
+            if #available(iOS 11.0, *) {
+                return UIApplication.shared.keyWindow?.safeAreaInsets.bottom ?? 0
+            } else {
+                return 0
+            }
+        }
+        
+        public static var safeAreaTop: CGFloat {
+            if #available(iOS 11.0, *) {
+                return UIApplication.shared.keyWindow?.safeAreaInsets.top ?? 0
+            } else {
+                return 0
+            }
+        }
+        
+        public static var safeAreaLeft: CGFloat {
+            if #available(iOS 11.0, *) {
+                return UIApplication.shared.keyWindow?.safeAreaInsets.left ?? 0
+            } else {
+                return 0
+            }
+        }
+        
+        public static var safeAreaRight: CGFloat {
+            if #available(iOS 11.0, *) {
+                return UIApplication.shared.keyWindow?.safeAreaInsets.right ?? 0
+            } else {
+                return 0
+            }
+        }
+    }
+}
