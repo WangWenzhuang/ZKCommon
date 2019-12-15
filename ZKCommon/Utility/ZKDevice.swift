@@ -36,8 +36,20 @@ public var ZKiPhoneModels: ZKiPhoneModel {
     }
 }
 
-public extension UIDevice {
+public final class ZKDevice {
     final class zk {
+        public static var isPad: Bool {
+            return UIDevice.current.model == "iPad"
+        }
+        
+        public static var isPhoneX: Bool {
+            if #available(iOS 11.0, *) {
+                return UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.phone && UIApplication.shared.keyWindow?.safeAreaInsets.bottom ?? 0 > 0
+            } else {
+                return false
+            }
+        }
+        
         public static var safeAreaBottom: CGFloat {
             if #available(iOS 11.0, *) {
                 return UIApplication.shared.keyWindow?.safeAreaInsets.bottom ?? 0

@@ -16,7 +16,7 @@ public extension FMDatabase {
         ///
         /// - Parameters:
         ///   - dbFilePath: 数据库路径，如果传 nil 默认使用 dbFilePath 值
-        /// - Returns: 格式化后的时间字符串
+        /// - Returns: 
         public static func manager(_ dbFilePath: String? = nil) -> FMDatabase {
             let db = FMDatabase(path: dbFilePath ?? self.dbFilePath)
             let isOpen = db.open()

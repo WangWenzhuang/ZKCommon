@@ -68,7 +68,7 @@ public extension FileManager {
         ///
         /// - Parameters:
         ///   - path: 文件路径
-        public static func delete(_ path: String) {
+        public static func remove(_ path: String) {
             do {
                 try FileManager.default.removeItem(atPath: path)
             } catch {

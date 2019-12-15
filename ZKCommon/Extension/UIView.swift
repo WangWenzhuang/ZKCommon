@@ -38,15 +38,15 @@ public extension UIView {
         get {
             return frame.origin.y
         } set {
-            frame.origin.y = y
+            frame.origin.y = newValue
         }
     }
     /// ZK: bottomY = y + height
-    var bottomY: CGFloat {
+    var bY: CGFloat {
         return height + y
     }
     /// ZK: rightX = width + x
-    var rightX: CGFloat {
+    var rX: CGFloat {
         return width + x
     }
 }

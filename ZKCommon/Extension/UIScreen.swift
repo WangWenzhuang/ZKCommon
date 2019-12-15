@@ -9,12 +9,14 @@
 import UIKit
 
 public extension UIScreen {
-    /// ZK: width
-    static var width: CGFloat {
-        return UIScreen.main.bounds.size.width
-    }
-    /// ZK: height
-    static var height: CGFloat {
-        return UIScreen.main.bounds.size.height
+    final class zk {
+        /// ZK: width
+        static var width: CGFloat {
+            return UIScreen.main.bounds.size.width
+        }
+        /// ZK: height
+        static var height: CGFloat {
+            return UIScreen.main.bounds.size.height
+        }
     }
 }
