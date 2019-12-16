@@ -37,7 +37,7 @@ public var ZKiPhoneModels: ZKiPhoneModel {
 }
 
 public final class ZKDevice {
-    final class zk {
+    public final class zk {
         public static var isPad: Bool {
             return UIDevice.current.model == "iPad"
         }
