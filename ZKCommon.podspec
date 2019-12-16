@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'ZKCommon'
-  s.version = '5.2'
+  s.version = '5.3'
   s.swift_version = '5.0'
   s.ios.deployment_target = '10.0'
   s.license = { :type => 'MIT', :file => 'LICENSE' }

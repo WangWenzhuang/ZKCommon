@@ -3,5 +3,5 @@
 # ZKCommon
 
 ![license](https://img.shields.io/badge/license-MIT-brightgreen.svg)
-![CocoaPods](https://img.shields.io/badge/pod-v5.2-brightgreen.svg)
+![CocoaPods](https://img.shields.io/badge/pod-v5.3-brightgreen.svg)
 ![platform](https://img.shields.io/badge/platform-iOS-brightgreen.svg)

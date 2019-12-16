@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension NSObject {
+public extension NSObject {
     func addNotification(_ selector: Selector, name: NSNotification.Name?, object: Any? = nil) {
         NotificationCenter.default.addObserver(self, selector: selector, name: name, object: object)
     }
