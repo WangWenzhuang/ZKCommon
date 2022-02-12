@@ -1,6 +1,0 @@
-framework module Pods_ZKCommon {
-  umbrella header "Pods-ZKCommon-umbrella.h"
-
-  export *
-  module * { export * }
-}
