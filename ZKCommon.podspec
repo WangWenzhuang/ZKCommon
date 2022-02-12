@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'ZKCommon'
-  s.version = '5.1.1'
+  s.version = '5.1.2'
   s.swift_version = '5.0'
   s.ios.deployment_target = '10.0'
   s.license = { :type => 'MIT', :file => 'LICENSE' }
@@ -12,7 +12,4 @@ Pod::Spec.new do |s|
   s.source_files = 'ZKCommon/**/*.swift'
   s.requires_arc = true
   s.pod_target_xcconfig = { 'SWIFT_VERSION' => '5.0' }
-  s.dependency 'FMDB'
-  s.dependency 'Then'
-  s.dependency 'ObjectMapper'
 end
